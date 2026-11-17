@@ -12,7 +12,7 @@ CURRENT PHASE: Phase 1
 ## Phase 1 tasks
 - [x] 0.9 Check docs/figma.md IDs against live Figma, fix wrong ones
 - [x] 1.0 Project setup
-- [ ] 1.1 Design tokens + fonts
+- [x] 1.1 Design tokens + fonts
 - [ ] 1.2 Header + footer
 - [ ] 1.3 Landing page sections
 - [ ] 1.4 Hero prompt (rotating examples, submit → /concept)
@@ -38,8 +38,12 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — shadcn base-nova has no `form` component; added `field` (its replacement) and use it with React Hook Form. Also pulled in `separator` (field needs it).
 - 2026-11-17 — shadcn added deps `cn` (shadcn's own clsx+tailwind-merge replacement, checked: official maintainer, no install scripts), `@base-ui/react`, `class-variance-authority`, `tw-animate-css`, `sonner`, `next-themes`, `shadcn` — all required by the shadcn components.
 - 2026-11-17 — `typecheck` script runs `next typegen` first so Next's generated types (LayoutProps) exist before tsc.
+- 2026-11-17 — Fonts: Inter + Stack Sans Headline (both Google Fonts, no files needed). Build warns Next can't make a fallback for Stack Sans Headline — harmless.
+- 2026-11-17 — Client logos in Figma are raster PNGs, not vectors, so exported as PNG (public/landing/white-logo-ink*.png). Royal Creative logo + crown symbol exported as SVG (public/brand/).
+- 2026-11-17 — Site is dark-only: shadcn semantic colours mapped to Figma tokens in :root, no light theme.
 
 ## Log
 <!-- date — task — one line -->
 - 2026-11-17 — 0.9 — All figma.md IDs valid on live page (109 nodes); added 14 missing campaign-part/component IDs.
 - 2026-11-17 — 1.0 — Next.js app set up, deps + shadcn installed, folders, providers, `npm run check` passes.
+- 2026-11-17 — 1.1 — Figma tokens in globals.css @theme, Inter + Stack Sans Headline via next/font, logo + landing assets exported.

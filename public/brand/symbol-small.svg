@@ -1,0 +1,24 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="24" height="18.8352" viewBox="0 0 24 18.8352" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Royal Creative symbol" clip-path="url(#clip0_0_19)">
+<path id="Crown artwork" d="M17.3808 7.75906L12.0199 12.2862H11.9873L6.6264 7.79885L11.4151 0.318974C11.517 0.164118 11.6753 0.0554172 11.8561 0.0161172C12.0369 -0.0231828 12.2258 0.0100375 12.3825 0.108674C12.4658 0.163827 12.5371 0.23537 12.5921 0.318974L17.3808 7.75906Z" fill="url(#paint0_linear_0_19)"/>
+<path id="Crown artwork_2" d="M12 12.2794L4.80385 18.5598C4.65451 18.6871 4.47484 18.7733 4.28239 18.81C4.08993 18.8468 3.89126 18.8328 3.70577 18.7696C3.52029 18.7063 3.35432 18.5959 3.22409 18.449C3.09385 18.3022 3.00378 18.124 2.96268 17.9318L0.741946 7.08035L0.0139747 3.58918C-0.0226883 3.40677 0.0134478 3.21721 0.114616 3.06124C0.215783 2.90527 0.373906 2.79536 0.554996 2.75511C0.660812 2.73341 0.770144 2.73594 0.87485 2.76251C0.979557 2.78908 1.07694 2.83901 1.15975 2.90857L12 12.2794Z" fill="url(#paint1_linear_0_19)"/>
+<path id="Crown artwork_3" d="M12 12.2795L19.1955 18.5598C19.3449 18.6888 19.5251 18.7765 19.7185 18.8143C19.912 18.852 20.1119 18.8385 20.2985 18.7751C20.4851 18.7117 20.652 18.6006 20.7828 18.4527C20.9135 18.3048 21.0036 18.1253 21.044 17.9318L23.2579 7.08039L23.986 3.58924C24.0227 3.40703 23.9867 3.21764 23.8858 3.06172C23.7849 2.90579 23.6271 2.79574 23.4463 2.75518C23.3402 2.73334 23.2304 2.73594 23.1254 2.76276C23.0204 2.78959 22.9229 2.83995 22.8401 2.91005L12 12.2795Z" fill="url(#paint2_linear_0_19)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_0_19" x1="6.6264" y1="6.14187" x2="17.3808" y2="6.14187" gradientUnits="userSpaceOnUse">
+<stop stop-color="#F82E34"/>
+<stop offset="1" stop-color="#F15F0D"/>
+</linearGradient>
+<linearGradient id="paint1_linear_0_19" x1="9.1392" y1="13.4417" x2="-0.606574" y2="9.66611" gradientUnits="userSpaceOnUse">
+<stop stop-color="#EA124A"/>
+<stop offset="1" stop-color="#ED106F"/>
+</linearGradient>
+<linearGradient id="paint2_linear_0_19" x1="15.9492" y1="15.8191" x2="23.8534" y2="7.96059" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FA6A14"/>
+<stop offset="1" stop-color="#FEA205"/>
+</linearGradient>
+<clipPath id="clip0_0_19">
+<rect width="24" height="18.8352" fill="white"/>
+</clipPath>
+</defs>
+</svg>
