@@ -24,7 +24,7 @@ CURRENT PHASE: Phase 1
 - [x] 1.10 Loading / generation states
 - [x] 1.11 Modern template + preview reveal
 - [x] 1.12 CTA, booking and welcome-back states (mocked)
-- [ ] 1.13 /verify and phase summary
+- [x] 1.13 /verify and phase summary
 
 (Claude: copy the task list of the next phase here when it starts.)
 
@@ -66,6 +66,7 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — Booking: fake slots = weekdays from tomorrow for 4 weeks at 09:30 / 10:30 / 14:00 (Figma times). Bank holidays not handled (Phase 3, ASK BILAL).
 - 2026-11-17 — Next 16 keeps the previous page mounted but hidden — QA scripts must target :visible elements. Next dev badge turned off (devIndicators: false) because it covers the mobile Skip pill.
 - 2026-11-17 — Dev toggle: /concept?fail=1 makes generation fail (non-production only).
+- 2026-11-17 — Verify: QA scripts in scripts/ — test-flow (full journey), test-cta (CTAs/booking/returning), test-a11y (keyboard + reduced motion), test-businesses (10 inputs), test-widths (no overflow 390→1920), test-turns, test-prompt. Lead route logs name/email/phone to the server console (Phase 1 "log only") — remove when Phase 3 stores leads.
 
 ## Log
 <!-- date — task — one line -->
@@ -83,3 +84,4 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.10 — Generation: browser mock builds nav → hero → sections, 5 personalised status lines on Figma timing, over-20s line, failure state, reduced-motion (no mock).
 - 2026-11-17 — 1.11 — Modern template from Figma (demo copy fixture matches Figma), mock generator, preview reveal with device toggle, concept label, email notice, "Want changes?" card.
 - 2026-11-17 — 1.12 — Get this built (UK callback line by Europe/London time, tested), Book a call calendar + phone/video + confirmations, welcome back + homepage returning link. E2E: scripts/test-flow.mjs, scripts/test-cta.mjs pass at 1440 and 390.
+- 2026-11-17 — 1.13 — /verify: check passes; full flow, CTAs, keyboard, reduced motion, 10 businesses, widths 390–1920 all pass. Fixed: "I'm a …" extraction, booking date timezone shift, removed 2 unused SVGs. Phase 1 complete — waiting for Bilal.

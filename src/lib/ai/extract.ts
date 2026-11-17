@@ -54,7 +54,7 @@ export function extractName(text: string): string | undefined {
 export function extractWhatTheyDo(text: string): string | undefined {
   const t = text.trim();
   const afterName = t.match(
-    new RegExp(`(?:^[^,]{2,60},\\s*|\\b(?:is|are)\\s+)(${ARTICLE}\\s+[^,.]+?)(?:\\s+${LOCATION_LEAD}\\b|[,.]|$)`, "i"),
+    new RegExp(`(?:^[^,]{2,60},\\s*|\\b(?:is|are|am|i['’]m|we['’]re)\\s+)(${ARTICLE}\\s+[^,.]+?)(?:\\s+${LOCATION_LEAD}\\b|[,.]|$)`, "i"),
   );
   if (afterName) return clean(afterName[1]);
   const afterComma = t.match(new RegExp(`^[^,]{2,60},\\s*([a-z][^,.]*?)\\s+${LOCATION_LEAD}\\b`));
