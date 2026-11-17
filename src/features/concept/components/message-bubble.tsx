@@ -28,7 +28,7 @@ export function MessageBubble({ from, children, className }: Props) {
     );
   }
   return (
-    <div className="flex w-full items-center gap-2.5">
+    <div className="flex w-full items-end gap-2.5 md:items-center">
       <AiAvatar />
       <div
         className={cn(

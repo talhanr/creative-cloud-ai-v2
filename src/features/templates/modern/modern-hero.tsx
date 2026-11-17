@@ -15,28 +15,28 @@ export function ModernHero({ content }: { content: SiteContent }) {
   const { hero } = content;
   return (
     <>
-      <header className="flex items-center justify-between gap-4 border-b border-(--t-primary)/15 px-5 py-6 md:px-16">
+      <header className="flex items-center justify-between gap-4 border-b border-(--t-primary)/15 px-5 py-6 @3xl:px-16">
         {content.logoDataUrl ? (
           <img src={content.logoDataUrl} alt={content.businessName} className="h-10 w-auto max-w-48 object-contain" />
         ) : (
-          <p className="text-[22px] font-semibold md:text-h4 md:leading-normal">{content.businessName}</p>
+          <p className="text-[22px] font-semibold @3xl:text-h4 @3xl:leading-normal">{content.businessName}</p>
         )}
         <nav aria-label={`${content.businessName} navigation`} className="flex items-center gap-7">
-          <ul className="hidden items-center gap-7 text-link tracking-normal lg:flex">
+          <ul className="hidden items-center gap-7 text-link tracking-normal @5xl:flex">
             {content.nav.map((l) => (
               <li key={l}>{l}</li>
             ))}
           </ul>
-          <span className="hidden sm:block">
+          <span className="hidden @2xl:block">
             <CtaButton label={content.cta} />
           </span>
         </nav>
       </header>
 
-      <section className="flex flex-col gap-10 px-5 py-14 md:px-16 md:py-24 lg:flex-row lg:items-center lg:gap-14">
+      <section className="flex flex-col gap-10 px-5 py-14 @3xl:px-16 @3xl:py-24 @5xl:flex-row @5xl:items-center @5xl:gap-14">
         <div className="flex min-w-0 flex-1 flex-col items-start gap-6">
           <Eyebrow>{hero.eyebrow}</Eyebrow>
-          <h1 className="text-[40px] leading-[1.1] font-semibold md:text-[64px]">
+          <h1 className="text-[40px] leading-[1.1] font-semibold @3xl:text-[64px]">
             {hero.headline.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -48,7 +48,7 @@ export function ModernHero({ content }: { content: SiteContent }) {
         </div>
         <div
           aria-hidden
-          className="flex min-h-[380px] w-full flex-col justify-between overflow-hidden bg-(--t-primary) p-7 lg:min-h-[460px] lg:w-[430px] lg:shrink-0"
+          className="flex min-h-[380px] w-full flex-col justify-between overflow-hidden bg-(--t-primary) p-7 @5xl:min-h-[460px] @5xl:w-[430px] @5xl:shrink-0"
         >
           <p className="text-caption text-(--t-accent)">{hero.composition.caption}</p>
           <div className="flex flex-col gap-2">
@@ -59,8 +59,8 @@ export function ModernHero({ content }: { content: SiteContent }) {
           <p
             className={
               Math.max(...hero.composition.words.map((w) => w.length)) > 6
-                ? "text-[52px] leading-[0.92] break-words text-(--t-accent) md:text-[64px]"
-                : "text-[72px] leading-[0.92] text-(--t-accent) md:text-[92px]"
+                ? "text-[52px] leading-[0.92] break-words text-(--t-accent) @3xl:text-[64px]"
+                : "text-[72px] leading-[0.92] text-(--t-accent) @3xl:text-[92px]"
             }
           >
             {hero.composition.words.map((w) => (
@@ -73,7 +73,7 @@ export function ModernHero({ content }: { content: SiteContent }) {
         </div>
       </section>
 
-      <ul className="flex flex-col gap-3 bg-(--t-accent) px-5 py-6 text-[22px] text-tpl-ink md:flex-row md:gap-5 md:px-16 md:text-h4 md:leading-normal">
+      <ul className="flex flex-col gap-3 bg-(--t-accent) px-5 py-6 text-[22px] text-tpl-ink @3xl:flex-row @3xl:gap-5 @3xl:px-16 @3xl:text-h4 @3xl:leading-normal">
         {content.serviceBand.map((s) => (
           <li key={s} className="min-w-0 flex-1">
             {s} ↗

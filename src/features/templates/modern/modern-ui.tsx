@@ -16,7 +16,7 @@ export function Eyebrow({ children, className }: { children: ReactNode; classNam
 }
 
 export function SectionTitle({ children }: { children: ReactNode }) {
-  return <h2 className="text-[34px] leading-[1.1] font-semibold md:text-[48px]">{children}</h2>;
+  return <h2 className="text-[34px] leading-[1.1] font-semibold @3xl:text-[48px]">{children}</h2>;
 }
 
 export function Body({ children, className }: { children: ReactNode; className?: string }) {
@@ -34,7 +34,7 @@ export function Section({
   label?: string;
 }) {
   return (
-    <section aria-label={label} className={cn("w-full px-5 py-14 md:px-16 md:py-24", className)}>
+    <section aria-label={label} className={cn("w-full px-5 py-14 @3xl:px-16 @3xl:py-24", className)}>
       {children}
     </section>
   );

@@ -74,7 +74,8 @@ export function buildSiteContent(answers: Answers): SiteContent {
     isPlaceholderName,
     location,
     palette: paletteFrom(answers.q7?.palette),
-    logoDataUrl: answers.q7?.mode === "logo" ? (answers.q7.logoDataUrl ?? null) : null,
+    // The uploaded logo stays in the browser; the client adds it to the preview.
+    logoDataUrl: null,
     cta,
     nav: ["Services", "The experience", ...(location ? [location] : [])],
     hero: {

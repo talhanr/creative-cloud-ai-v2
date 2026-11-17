@@ -44,8 +44,6 @@ const hex = z.string().regex(/^#[0-9a-fA-F]{6}$/);
 export const brandingSchema = z.object({
   mode: z.enum(["logo", "colours", "none"]),
   palette: z.array(hex).max(4).optional(),
-  /** Client-side only preview of the uploaded logo (data URL). Never sent to the AI. */
-  logoDataUrl: z.string().max(400_000).optional(),
   logoName: z.string().max(120).optional(),
 });
 export type Branding = z.infer<typeof brandingSchema>;

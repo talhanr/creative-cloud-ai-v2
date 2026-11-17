@@ -1,7 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Dev badge sits over the chat composer on mobile (blocks Skip) — off.
+  devIndicators: false,
   cacheComponents: true,
   partialPrefetching: true,
   turbopack: {

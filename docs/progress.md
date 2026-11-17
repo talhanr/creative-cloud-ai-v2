@@ -18,12 +18,12 @@ CURRENT PHASE: Phase 1
 - [x] 1.4 Hero prompt (rotating examples, submit → /concept)
 - [x] 1.5 Content file: exact copy from Figma
 - [x] 1.6 Mock AI service
-- [ ] 1.7 Chat shell + Getting started states
-- [ ] 1.8 Q1–Q7 (incl. Q7 branding sub-states)
-- [ ] 1.9 Contact form
-- [ ] 1.10 Loading / generation states
-- [ ] 1.11 Modern template + preview reveal
-- [ ] 1.12 CTA, booking and welcome-back states (mocked)
+- [x] 1.7 Chat shell + Getting started states
+- [x] 1.8 Q1–Q7 (incl. Q7 branding sub-states)
+- [x] 1.9 Contact form
+- [x] 1.10 Loading / generation states
+- [x] 1.11 Modern template + preview reveal
+- [x] 1.12 CTA, booking and welcome-back states (mocked)
 - [ ] 1.13 /verify and phase summary
 
 (Claude: copy the task list of the next phase here when it starts.)
@@ -57,6 +57,15 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — "Get this built" frames (today / after 5pm / weekend) have identical text in Figma → kept Figma heading/body and added the handoff's time-based call line ("Brilliant! We'll give you a call today…" / "first thing tomorrow" / "first thing Monday").
 - 2026-11-17 — Preview reveal frame shows a Lora-font variant of the Fade Factory page ("The art of a fade.", "Grooming, considered.") that differs from "Template / modern". Phase spec says modern → preview renders the modern template. Flag for Bilal.
 - 2026-11-17 — Figma copy kept verbatim but flagged for Bilal: "…and the next steps" (no full stop); "please check your email for verification" (lowercase); "Illustrative available slots · UK time" / "Illustrative scheduled slot" read like design notes; "Testimonals" spelling on landing.
+- 2026-11-17 — Chat history: full history kept; only the latest exchange shows by default with "↑ View earlier messages" (Figma Q2+). AI text fades in letter by letter over 1s (Figma motion); typing dots pulse 2s.
+- 2026-11-17 — Q7 colours: picker opens inline in the colours card (Figma shows an extra "Let's set the exact shades…" AI bubble first — skipped to keep the card in one place). Logo upload is client-side only; logo never sent to the server, saved in localStorage only if under ~1.5MB. Upload before-state ("Upload your logo" button) isn't in Figma — built in the same card style.
+- 2026-11-17 — Q5: composer still shown so visitors can type their own action (Figma shows it too).
+- 2026-11-17 — Contact header shows "One last step" + dots on both default and error states (Figma default shows dots only).
+- 2026-11-17 — Template made responsive with container queries (@container) so the preview's Desktop/Tablet/Mobile toggle reflows it inside the browser frame. Device toggle hidden on phones.
+- 2026-11-17 — Saved-concept mini card uses Inter (Figma uses Lora there, matching its Lora preview variant) — kept one font family with the modern template.
+- 2026-11-17 — Booking: fake slots = weekdays from tomorrow for 4 weeks at 09:30 / 10:30 / 14:00 (Figma times). Bank holidays not handled (Phase 3, ASK BILAL).
+- 2026-11-17 — Next 16 keeps the previous page mounted but hidden — QA scripts must target :visible elements. Next dev badge turned off (devIndicators: false) because it covers the mobile Skip pill.
+- 2026-11-17 — Dev toggle: /concept?fail=1 makes generation fail (non-production only).
 
 ## Log
 <!-- date — task — one line -->
@@ -68,3 +77,9 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.4 — Hero prompt: handoff examples typed 40ms/held 2s/deleted 20ms, focus clears, blur resumes, Enter submits → /concept with text in store, reduced-motion static text. Tested with Playwright.
 - 2026-11-17 — 1.6 — Mock AI: extractor (name / what they do / location), filler + nonsense + offensive checks, turn engine, generator, API routes with Zod. Demo conversation reproduces Figma copy exactly (scripts/test-turns.mjs).
 - 2026-11-17 — 1.5 — All flow copy from 32 desktop frames in src/lib/content/concept.ts; ai-flow.md exact-copy table filled.
+- 2026-11-17 — 1.7 — /concept chat: header (Getting started / dots / One last step), bubbles, composer, typing, earlier-messages, no-name chip + card, live region, retry on error.
+- 2026-11-17 — 1.8 — Q1–Q7 incl. Skip, Q5 chips, Q7 chooser / logo upload + palette sampler / colours field + picker / nothing-yet direction.
+- 2026-11-17 — 1.9 — Inline contact form: RHF + Zod, disposable-email list, UK phone → +44, unticked opt-in, error summary, first invalid field focused.
+- 2026-11-17 — 1.10 — Generation: browser mock builds nav → hero → sections, 5 personalised status lines on Figma timing, over-20s line, failure state, reduced-motion (no mock).
+- 2026-11-17 — 1.11 — Modern template from Figma (demo copy fixture matches Figma), mock generator, preview reveal with device toggle, concept label, email notice, "Want changes?" card.
+- 2026-11-17 — 1.12 — Get this built (UK callback line by Europe/London time, tested), Book a call calendar + phone/video + confirmations, welcome back + homepage returning link. E2E: scripts/test-flow.mjs, scripts/test-cta.mjs pass at 1440 and 390.

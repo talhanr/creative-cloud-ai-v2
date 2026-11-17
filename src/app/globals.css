@@ -45,6 +45,12 @@
   --color-bubble-user: #24211f;
   --color-avatar: #25100c;
   --color-send: #32231c;
+  --color-chip: #131313;
+  --color-success: #8ed8b4;
+  --color-danger: #ffa5a5;
+  --color-form: #111111;
+  --color-selected: #402518;
+  --color-chip-line: #333333;
 
   /* Generated-site template "modern" fixed neutrals (palette primary/accent come from the visitor) */
   --color-tpl-paper: #fcfaf6;
@@ -133,6 +139,10 @@
   --animate-border-180: border-180 18s linear infinite;
   --animate-border-270: border-270 18s linear infinite;
   --animate-caret: caret 1s steps(1) infinite;
+  --animate-char-in: char-in 8ms linear forwards;
+  --animate-typing: typing 2s ease-out infinite;
+  --animate-fade-in: fade-in 0.5s ease-out both;
+  --animate-rise-in: rise-in 0.35s ease-out both;
 
   @keyframes drift-a {
     0%, 100% { transform: translate(0, 0); }
@@ -180,6 +190,21 @@
     0%, 41.67% { opacity: 0; }
     50%, 58.33% { opacity: 1; }
     66.67%, 100% { opacity: 0; }
+  }
+  @keyframes char-in {
+    to { opacity: 1; }
+  }
+  @keyframes typing {
+    0%, 30%, 60%, 90% { opacity: 0.3; }
+    15%, 45%, 75%, 100% { opacity: 1; }
+  }
+  @keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes rise-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
   }
   @keyframes caret {
     0%, 100% { opacity: 1; }
@@ -231,7 +256,7 @@
   --muted-foreground: var(--color-gray-2);
   --accent: var(--color-ink-2);
   --accent-foreground: #ffffff;
-  --destructive: #ff6b5b;
+  --destructive: var(--color-danger);
   --border: var(--color-white-10);
   --input: var(--color-flow-line);
   --ring: var(--color-brand-soft);
@@ -302,4 +327,34 @@
     linear-gradient(#000 0 0) padding-box,
     linear-gradient(#000 0 0);
   mask-composite: exclude;
+}
+
+/* Q7 colour picker hue slider (Figma rainbow track, 24px white handle) */
+@utility hue-slider {
+  background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f, #f00);
+  &::-webkit-slider-thumb {
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 3px solid #fff;
+    background: transparent;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 0.4);
+  }
+  &::-moz-range-thumb {
+    width: 24px;
+    height: 24px;
+    border-radius: 9999px;
+    border: 3px solid #fff;
+    background: transparent;
+  }
+}
+
+/* AI flow background (Figma flow frames): #070707 + faint pink (left) / amber (right) glows */
+@utility bg-flow {
+  background-color: var(--color-flow-bg);
+  background-image:
+    radial-gradient(ellipse 15% 15% at 10% 45%, rgb(237 16 111 / 0.05), transparent),
+    radial-gradient(ellipse 15% 15% at 90% 45%, rgb(254 162 5 / 0.05), transparent);
+  background-size: 100% 100%;
 }

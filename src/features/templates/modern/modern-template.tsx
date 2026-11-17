@@ -13,7 +13,7 @@ export function ModernTemplate({ content }: { content: SiteContent }) {
   } as CSSProperties;
 
   return (
-    <div style={style} className="bg-(--t-primary) font-sans text-(--t-primary)">
+    <div style={style} className="@container bg-(--t-primary) font-sans text-(--t-primary)">
       <div className="flex flex-col bg-tpl-paper">
         <ModernHero content={content} />
         <ModernMiddle content={content} />

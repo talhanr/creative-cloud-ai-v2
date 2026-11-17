@@ -28,8 +28,12 @@ export const chatCopy = {
   inputLabel: "Your answer",
   sendLabel: "Send answer",
   enterHint: "Press Enter to send",
+  mobileHint: "Type your answer",
   earlier: "↑ View earlier messages",
   typing: "Royal Creative AI is typing",
+  q5Options: "What should visitors do?",
+  turnError: "Sorry, that didn't send.",
+  retry: "Try again",
   /** Screen-reader name for the 7-dot progress row. */
   progress: (n: number) => `Question ${n} of 7`,
 } as const;
@@ -173,6 +177,9 @@ export const loadingCopy = {
   ],
   colourSource: { logo: "from your logo", colours: "you chose", none: "I picked for you" },
   slow: "Nearly there, good design takes a moment…",
+  /** Used when the visitor's Q3 / Q5 answer was skipped after clarification. */
+  headlineFallback: "Writing your headline…",
+  ctaFallback: "Adding your main button…",
   failure: {
     title: "Your details are safe.",
     body: "Something went wrong on our side, but don't worry, we've got your details and our team will send your homepage over shortly.",

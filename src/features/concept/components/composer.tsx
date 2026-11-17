@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useId, useRef, useState, type FormEvent, type KeyboardEvent } from "react";
+import { useId, useRef, useState, type FormEvent, type KeyboardEvent, type ReactNode } from "react";
 import { chatCopy } from "@/lib/content/concept";
 import { MAX_MESSAGE } from "@/lib/validation/concept";
 import { cn } from "@/lib/utils";
@@ -10,11 +10,13 @@ type Props = {
   onSend: (text: string) => void;
   disabled?: boolean;
   placeholder?: string;
+  /** Extra button (Q4 "Skip"): inside the box on desktop, under it on mobile. */
+  extra?: ReactNode;
 };
 
 // Figma "Chat input dock" (Q1 59015:19670): prompt box #141414 18px radius, inner field 16px radius,
 // 48px send square (#32231c idle → brand gradient when typed), guidance row 12px #8d8987.
-export function Composer({ onSend, disabled, placeholder = chatCopy.placeholder }: Props) {
+export function Composer({ onSend, disabled, placeholder = chatCopy.placeholder, extra }: Props) {
   const id = useId();
   const ref = useRef<HTMLTextAreaElement>(null);
   const [value, setValue] = useState("");
@@ -54,7 +56,6 @@ export function Composer({ onSend, disabled, placeholder = chatCopy.placeholder 
           value={value}
           rows={1}
           maxLength={MAX_MESSAGE}
-          disabled={disabled}
           placeholder={placeholder}
           aria-describedby={`${id}-hint ${id}-count`}
           onChange={(e) => setValue(e.target.value)}
@@ -63,6 +64,7 @@ export function Composer({ onSend, disabled, placeholder = chatCopy.placeholder 
           onBlur={() => setFocused(false)}
           className="field-sizing-content max-h-40 min-h-14 min-w-0 flex-1 resize-none rounded-card border border-flow-line bg-ink-3 p-4 text-body leading-normal text-flow-text outline-none placeholder:text-flow-muted disabled:opacity-60"
         />
+        {extra && <div className="hidden md:block">{extra}</div>}
         <button
           type="submit"
           disabled={disabled || !hasText}
@@ -81,8 +83,12 @@ export function Composer({ onSend, disabled, placeholder = chatCopy.placeholder 
           />
         </button>
       </div>
-      <div className="flex justify-between text-caption text-flow-muted">
-        <p id={`${id}-hint`}>{chatCopy.enterHint}</p>
+      <div className="flex items-center justify-between text-caption text-flow-muted">
+        {extra && <div className="md:hidden">{extra}</div>}
+        <p id={`${id}-hint`} className={extra ? "sr-only md:not-sr-only" : undefined}>
+          <span className="md:hidden">{chatCopy.mobileHint}</span>
+          <span className="hidden md:inline">{chatCopy.enterHint}</span>
+        </p>
         <p id={`${id}-count`}>
           <span className="sr-only">Characters used: </span>
           {value.length}/{MAX_MESSAGE}

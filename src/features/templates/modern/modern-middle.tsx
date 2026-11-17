@@ -9,10 +9,10 @@ export function ModernMiddle({ content }: { content: SiteContent }) {
       <Section label={services.eyebrow} className="flex flex-col gap-10">
         <Eyebrow>{services.eyebrow}</Eyebrow>
         <SectionTitle>{services.title}</SectionTitle>
-        <ul className="flex flex-col gap-4 md:flex-row md:items-start">
+        <ul className="flex flex-col gap-4 @3xl:flex-row @3xl:items-start">
           {services.items.map((item) => (
             <li key={item.title} className="flex min-w-0 flex-1 flex-col gap-6 bg-tpl-mist p-7">
-              <p aria-hidden className="text-[48px] leading-normal md:text-[60px]">
+              <p aria-hidden className="text-[48px] leading-normal @3xl:text-[60px]">
                 {item.word}
               </p>
               <div className="flex flex-col gap-3">
@@ -27,10 +27,10 @@ export function ModernMiddle({ content }: { content: SiteContent }) {
 
       <Section
         label={feature.eyebrow}
-        className="flex flex-col gap-10 bg-tpl-mist lg:flex-row lg:items-center lg:gap-14"
+        className="flex flex-col gap-10 bg-tpl-mist @5xl:flex-row @5xl:items-center @5xl:gap-14"
       >
-        <div className="flex min-h-[260px] flex-1 flex-col items-center justify-center gap-5 bg-(--t-primary) p-8 lg:min-h-[340px]">
-          <p className="w-full text-center text-[56px] leading-[1.05] text-(--t-accent) md:text-[80px]">
+        <div className="flex min-h-[260px] flex-1 flex-col items-center justify-center gap-5 bg-(--t-primary) p-8 @5xl:min-h-[340px]">
+          <p className="w-full text-center text-[56px] leading-[1.05] text-(--t-accent) @3xl:text-[80px]">
             {feature.statement.map((w) => (
               <span key={w} className="block">
                 {w}
@@ -50,9 +50,9 @@ export function ModernMiddle({ content }: { content: SiteContent }) {
       <Section label={experience.eyebrow} className="flex flex-col gap-8">
         <Eyebrow>{experience.eyebrow}</Eyebrow>
         <SectionTitle>{experience.title}</SectionTitle>
-        <div className="flex flex-col gap-8 md:flex-row md:gap-12">
+        <div className="flex flex-col gap-8 @3xl:flex-row @3xl:gap-12">
           <Body className="flex-1">{experience.body}</Body>
-          <ul className="flex flex-1 flex-col gap-4 text-[26px] leading-normal md:text-h3">
+          <ul className="flex flex-1 flex-col gap-4 text-[26px] leading-normal @3xl:text-h3">
             {experience.values.map((v) => (
               <li key={v}>{v}</li>
             ))}

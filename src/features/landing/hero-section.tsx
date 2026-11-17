@@ -1,7 +1,7 @@
 import { hero } from "@/lib/content/landing";
 import { ClientLogos } from "./client-logos";
 import { HeroGlow } from "./hero-glow";
-import { PromptBox } from "./prompt-box";
+import { HeroAction } from "./hero-action";
 
 // Figma "Hero Section" 58698:4171 — 1080 tall on desktop, logo band pinned to the bottom.
 export function HeroSection() {
@@ -23,8 +23,8 @@ export function HeroSection() {
             {hero.subtitle}
           </p>
         </div>
-        <div className="w-full pt-5 lg:w-[740px] lg:pt-0">
-          <PromptBox mode="rotate" />
+        <div className="w-full pt-5 lg:w-[880px] lg:pt-0">
+          <HeroAction />
         </div>
       </div>
       <ClientLogos />
