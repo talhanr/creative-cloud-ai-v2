@@ -46,6 +46,12 @@
   --color-avatar: #25100c;
   --color-send: #32231c;
 
+  /* Generated-site template "modern" fixed neutrals (palette primary/accent come from the visitor) */
+  --color-tpl-paper: #fcfaf6;
+  --color-tpl-mist: #eceff0;
+  --color-tpl-ink: #0d2033;
+  --color-tpl-cream: #f3ede2;
+
   /* Gradients */
   --gradient-brand: linear-gradient(90deg, #ed106f 0%, #f44720 43.75%, #fea205 100%);
   --gradient-brand-v: linear-gradient(180deg, #ed106f 0%, #f44720 43.75%, #fea205 100%);

@@ -17,7 +17,7 @@ CURRENT PHASE: Phase 1
 - [x] 1.3 Landing page sections
 - [x] 1.4 Hero prompt (rotating examples, submit → /concept)
 - [ ] 1.5 Content file: exact copy from Figma
-- [ ] 1.6 Mock AI service
+- [x] 1.6 Mock AI service
 - [ ] 1.7 Chat shell + Getting started states
 - [ ] 1.8 Q1–Q7 (incl. Q7 branding sub-states)
 - [ ] 1.9 Contact form
@@ -50,6 +50,10 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — Loops simplified where Figma's prototype jumps: client logos + marquee bands loop seamlessly; projects auto-advance every 6s (pause on hover/focus); showcase columns follow Figma's 15s move + 3s hold. All off with reduced motion (projects then stack).
 - 2026-11-17 — Gotcha: `cn()` treats custom `text-<token>` size utilities (text-display-m, text-h1…) as colours and drops them when a colour class follows. Keep size and colour classes in separate cn calls/elements.
 - 2026-11-17 — QA helpers in scripts/: serve.sh (restart prod server on :3456), shot.mjs (full-page screenshot), test-prompt.mjs (hero prompt behaviour).
+- 2026-11-17 — Mock AI: every visitor message (incl. taps: no-name, Skip, Q5 option, Q7 confirm) goes through POST /api/concept/turn → runTurn() (src/lib/ai/turn.ts). Q7 branding is picked in the UI and sent with the answers.
+- 2026-11-17 — Copy NOT in Figma, written by Claude (Bilal to approve): clarification lines for Q1–Q6 ("Sorry, I didn't quite catch that…"), Q4 answered reaction, session-limit line, upload errors, Q5 answers for Call/Order/Visit/Enquire (only "Book" → "Book an appointment" is in Figma), sending/server-error lines. All in src/lib/content/concept.ts.
+- 2026-11-17 — Reactions generalise the Figma demo lines with the visitor's own words (e.g. Q2 "{answer} — I'll keep them in mind."); Figma's Q2 line "A fresh cut for your Manchester neighbours…" needs real AI wording (Phase 2).
+- 2026-11-17 — Mock generator (src/lib/ai/generate-content.ts) fills the modern template only from answers; darker chosen colour becomes primary. Figma demo copy kept as a fixture (src/features/templates/demo-content.ts). Dev-only QA page /dev/template (404 in production).
 
 ## Log
 <!-- date — task — one line -->
@@ -59,3 +63,4 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.2 — Floating pill header (desktop nav + Marketing dropdown, mobile sheet) and footer from Figma.
 - 2026-11-17 — 1.3 — All landing sections built (hero glow, logos, showcase, services, projects, about, testimonials, marquee, CTA); 1920 page 9484px vs Figma 9424.
 - 2026-11-17 — 1.4 — Hero prompt: handoff examples typed 40ms/held 2s/deleted 20ms, focus clears, blur resumes, Enter submits → /concept with text in store, reduced-motion static text. Tested with Playwright.
+- 2026-11-17 — 1.6 — Mock AI: extractor (name / what they do / location), filler + nonsense + offensive checks, turn engine, generator, API routes with Zod. Demo conversation reproduces Figma copy exactly (scripts/test-turns.mjs).
