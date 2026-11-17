@@ -16,7 +16,7 @@ CURRENT PHASE: Phase 1
 - [x] 1.2 Header + footer
 - [x] 1.3 Landing page sections
 - [x] 1.4 Hero prompt (rotating examples, submit → /concept)
-- [ ] 1.5 Content file: exact copy from Figma
+- [x] 1.5 Content file: exact copy from Figma
 - [x] 1.6 Mock AI service
 - [ ] 1.7 Chat shell + Getting started states
 - [ ] 1.8 Q1–Q7 (incl. Q7 branding sub-states)
@@ -54,6 +54,9 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — Copy NOT in Figma, written by Claude (Bilal to approve): clarification lines for Q1–Q6 ("Sorry, I didn't quite catch that…"), Q4 answered reaction, session-limit line, upload errors, Q5 answers for Call/Order/Visit/Enquire (only "Book" → "Book an appointment" is in Figma), sending/server-error lines. All in src/lib/content/concept.ts.
 - 2026-11-17 — Reactions generalise the Figma demo lines with the visitor's own words (e.g. Q2 "{answer} — I'll keep them in mind."); Figma's Q2 line "A fresh cut for your Manchester neighbours…" needs real AI wording (Phase 2).
 - 2026-11-17 — Mock generator (src/lib/ai/generate-content.ts) fills the modern template only from answers; darker chosen colour becomes primary. Figma demo copy kept as a fixture (src/features/templates/demo-content.ts). Dev-only QA page /dev/template (404 in production).
+- 2026-11-17 — "Get this built" frames (today / after 5pm / weekend) have identical text in Figma → kept Figma heading/body and added the handoff's time-based call line ("Brilliant! We'll give you a call today…" / "first thing tomorrow" / "first thing Monday").
+- 2026-11-17 — Preview reveal frame shows a Lora-font variant of the Fade Factory page ("The art of a fade.", "Grooming, considered.") that differs from "Template / modern". Phase spec says modern → preview renders the modern template. Flag for Bilal.
+- 2026-11-17 — Figma copy kept verbatim but flagged for Bilal: "…and the next steps" (no full stop); "please check your email for verification" (lowercase); "Illustrative available slots · UK time" / "Illustrative scheduled slot" read like design notes; "Testimonals" spelling on landing.
 
 ## Log
 <!-- date — task — one line -->
@@ -64,3 +67,4 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.3 — All landing sections built (hero glow, logos, showcase, services, projects, about, testimonials, marquee, CTA); 1920 page 9484px vs Figma 9424.
 - 2026-11-17 — 1.4 — Hero prompt: handoff examples typed 40ms/held 2s/deleted 20ms, focus clears, blur resumes, Enter submits → /concept with text in store, reduced-motion static text. Tested with Playwright.
 - 2026-11-17 — 1.6 — Mock AI: extractor (name / what they do / location), filler + nonsense + offensive checks, turn engine, generator, API routes with Zod. Demo conversation reproduces Figma copy exactly (scripts/test-turns.mjs).
+- 2026-11-17 — 1.5 — All flow copy from 32 desktop frames in src/lib/content/concept.ts; ai-flow.md exact-copy table filled.

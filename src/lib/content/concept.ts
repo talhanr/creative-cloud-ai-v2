@@ -180,3 +180,66 @@ export const loadingCopy = {
     back: "Back to homepage",
   },
 } as const;
+
+export const previewCopy = {
+  conceptLabel: "AI concept — final design by Royal Creative",
+  emailNotice: "Your concept link has also been sent to {email}.",
+  browserTitle: "{name} · Homepage concept",
+  devices: { desktop: "Desktop", tablet: "Tablet", mobile: "Mobile" },
+  deviceGroup: "Preview size",
+  getBuilt: "Get this built",
+  bookCall: "Book a call",
+  changesTitle: "Want changes? That's what our designers are for.",
+  changesBody: "Talk through your concept with the Royal Creative team.",
+  savedLabel: "{name} · Original homepage concept",
+  revealed: "Your homepage concept is ready.",
+} as const;
+
+/** "Get this built" confirmations. Figma frames share one text; the call line follows the handoff UK rules. */
+export const builtCopy = {
+  eyebrow: "Your Website Concept",
+  title: "We'll be in touch shortly.",
+  body: "Thank you for your interest. A member of our team will be in touch to discuss your website and the next steps",
+  callLine: {
+    today: "Brilliant! We'll give you a call today to talk through your website.",
+    tomorrow: "We'll call you first thing tomorrow.",
+    monday: "We'll call you first thing Monday.",
+  },
+} as const;
+
+export const bookingCopy = {
+  title: "Let's talk about {name}.",
+  body: "Pick a time that suits you. We already have your contact details.",
+  prevMonth: "‹",
+  nextMonth: "›",
+  prevMonthLabel: "Previous month",
+  nextMonthLabel: "Next month",
+  weekdays: ["M", "T", "W", "T", "F", "S", "S"],
+  slotsNote: "Illustrative available slots · UK time",
+  pickDay: "Pick a day to see times.",
+  noSlots: "No times left on this day. Please pick another.",
+  callTypeLabel: "How would you like to talk?",
+  phone: "Phone",
+  video: "Video",
+  phoneInfo: "We’ll contact you using your saved details.",
+  videoInfo: "Video: a Google Meet link will be emailed to {email}.",
+  confirmPhone: "Confirm phone call",
+  confirmVideo: "Confirm video call",
+  confirmedPhone: {
+    title: "Your call is booked.",
+    when: "{date} · {time} UK time",
+    note: "please check your email for verification",
+    body: "We’ll send you a confirmation email with your booking details.",
+  },
+  confirmedVideo: {
+    title: "Your video call is booked.",
+    when: "{date} · {time} UK time",
+    note: "Illustrative scheduled slot",
+    body: "Your Google Meet link will be emailed to {email}.",
+  },
+} as const;
+
+export const returningCopy = {
+  homeLink: "You've already got a homepage concept. View it here.",
+  welcomeBack: "Welcome back! Here's the homepage we designed for {name}.",
+} as const;

@@ -55,14 +55,17 @@ Type 40ms/letter, hold 2s, delete 20ms/letter, blinking cursor, example text lig
 Focus stops + clears the example; empty blur resumes. Reduced motion: static
 "Tell us about your business…".
 
-## Exact copy (fill from Figma in Phase 1)
+## Exact copy (filled from Figma, Phase 1 — code source: `src/lib/content/concept.ts`)
 | Step | Question / text shown | Options |
 |---|---|---|
-| Getting started | | |
-| Q1 | | |
-| Q2 | | |
-| Q3 | | |
-| Q4 | | Skip |
-| Q5 | | |
-| Q6 | | |
-| Q7 | | |
+| Getting started | Intro: "Great to meet you! Before I start designing, I'd like to get to know your business properly. It'll only take a couple of minutes." · Missing name: "{What they do} in {location}, love it! What's your business called?" · Missing services: "Great name! What does {name} do?" · Missing location: "Where are you based, or which areas do you cover?" · Unclear: "Tell me a bit more. What's your business and what do you do?" · No name: "No problem, I'll use a placeholder for now and our team can help you with a name later." + "What does your business do, and where are you based?" (card: "Your Business Name" / "We'll carry on once we know what you do and where.") | "I haven't got a name yet" |
+| Q1 | "{name}, {what} in {location}, lovely! Tell me more about what you offer. What do people come to you for?" | |
+| Q2 | "Who are your customers? The more I know about them, the better I can design for them." | |
+| Q3 | "What do your customers love most about you? This is what I'll build your homepage around." | |
+| Q4 | "Anything that helps people trust you? Years in business, qualifications, awards, or something a customer once said about you." | Skip (inside composer) → "No problem, we'll leave that out for now." |
+| Q5 | "What should visitors do when they find you?" | Book · Call · Order · Visit · Enquire (Book → "Book an appointment") |
+| Q6 | "How do you want people to feel when they land on your website?" | |
+| Q7 | "Do you already have branding, like a logo or colours you use?" | "Yes, I have a logo" · "I have colours, but no logo" · "Nothing yet" |
+
+Reactions (demo): Q1 "A clear set of services for Fade Factory — got it." · Q3 "Precise work and a relaxed welcome — that gives us a strong focus." · Q5 "I'll make booking an appointment the main action." · Q6 "Bold, modern and welcoming — a clear direction." · After Q7: "Perfect, I've got a clear picture of your business. Pop your details in and I'll show you your new homepage."
+Full per-frame copy (incl. contact, loading, preview, booking): see `src/lib/content/concept.ts`.
