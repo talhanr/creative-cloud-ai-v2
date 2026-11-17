@@ -25,6 +25,9 @@ Goal: every confirmation screen becomes true. A lead is never lost.
 - [ ] 3.7 Booking: real availability, no double booking (transaction/lock), phone uses given number,
       video creates Meet link and emails it. Confirm date, time, timezone, type.
 - [ ] 3.8 Callback copy with real Europe/London business-time + bank holiday rules.
+      Bank holidays (Bilal): treat like weekend → "We'll call you first thing on the next working day."
+      Source: https://www.gov.uk/bank-holidays.json (England & Wales), cached. Extend src/lib/uk-time.ts
+      (callbackWhen → "nextWorkingDay") + builtCopy.callLine in src/lib/content/concept.ts.
 - [ ] 3.9 Turnstile before chat, rate limits per session/IP, disposable email block, monthly AI
       spend cap, cost-per-lead tracking.
 - [ ] 3.10 Returning visitor: browser marker + lookup by email/phone shows original concept.

@@ -4,7 +4,7 @@ import { Dialog as DialogPrimitive } from "@base-ui/react/dialog";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
-import { headerCta, mainNav, marketingNav } from "@/lib/content/site";
+import { headerCta, mainNav, marketingNav, phone } from "@/lib/content/site";
 
 // Mobile header menu. No mobile landing header in Figma — clean full-height sheet in brand tokens.
 export function MobileMenu() {
@@ -65,10 +65,11 @@ export function MobileMenu() {
           </nav>
           <Link
             href={headerCta.href}
+            aria-label={headerCta.ariaLabel}
             onClick={close}
             className="mt-auto flex min-h-11 items-center justify-center rounded-panel-lg bg-brand-gradient-v px-6 py-4 font-semibold text-white"
           >
-            {headerCta.label}
+            {headerCta.label} · {phone.display}
           </Link>
         </DialogPrimitive.Popup>
       </DialogPrimitive.Portal>

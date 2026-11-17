@@ -15,8 +15,8 @@ export const heroPrompt = {
   holdMs: 2000,
   deleteMs: 20,
   staticPlaceholder: "Tell us about your business…",
-  label: "Tell us about your business",
-  submitLabel: "Start my website concept",
+  label: "Tell us about your business", // not from Figma — review before launch
+  submitLabel: "Start my website concept", // not from Figma — review before launch
   maxLength: 300,
 } as const;
 
@@ -25,17 +25,17 @@ export const chatCopy = {
   gettingStarted: "Getting started",
   oneLastStep: "One last step",
   placeholder: "Type your answer…",
-  inputLabel: "Your answer",
-  sendLabel: "Send answer",
+  inputLabel: "Your answer", // not from Figma — review before launch
+  sendLabel: "Send answer", // not from Figma — review before launch
   enterHint: "Press Enter to send",
   mobileHint: "Type your answer",
   earlier: "↑ View earlier messages",
-  typing: "Royal Creative AI is typing",
-  q5Options: "What should visitors do?",
-  turnError: "Sorry, that didn't send.",
-  retry: "Try again",
+  typing: "Royal Creative AI is typing", // not from Figma — review before launch
+  q5Options: "What should visitors do?", // not from Figma — review before launch
+  turnError: "Sorry, that didn't send.", // not from Figma — review before launch
+  retry: "Try again", // not from Figma — review before launch
   /** Screen-reader name for the 7-dot progress row. */
-  progress: (n: number) => `Question ${n} of 7`,
+  progress: (n: number) => `Question ${n} of 7`, // not from Figma — review before launch
 } as const;
 
 /** Getting started (before Q1). */
@@ -45,7 +45,7 @@ export const gettingStartedCopy = {
   /** All three essentials known → reaction, then Q1. */
   essentialsReady: "{name}, {services} in {location}, lovely!",
   askName: "{Services} in {location}, love it! What's your business called?",
-  askNameNoContext: "What's your business called?",
+  askNameNoContext: "What's your business called?", // not from Figma — review before launch
   noNameOption: "I haven't got a name yet",
   noNameReply:
     "No problem, I'll use a placeholder for now and our team can help you with a name later.",
@@ -53,7 +53,7 @@ export const gettingStartedCopy = {
   placeholderHint: "We'll carry on once we know what you do and where.",
   askServicesAndLocation: "What does your business do, and where are you based?",
   askServices: "Great name! What does {name} do?",
-  askServicesNoName: "What does your business do?",
+  askServicesNoName: "What does your business do?", // not from Figma — review before launch
   askLocation: "Where are you based, or which areas do you cover?",
   unclear: "Tell me a bit more. What's your business and what do you do?",
 } as const;
@@ -74,7 +74,7 @@ export const reactions = {
   q1: "A clear set of services for {name} — got it.",
   q2: "{Answer} — I'll keep them in mind.",
   q3: "{Answer} — that gives us a strong focus.",
-  q4: "That's really useful — I'll use it to help people trust you.",
+  q4: "That's really useful — I'll use it to help people trust you.", // not from Figma — review before launch
   q4Skipped: "No problem, we'll leave that out for now.",
   q5: "I'll make {action} the main action.",
   q6: "{Answer} — a clear direction.",
@@ -89,18 +89,18 @@ export const skipLabel = "Skip";
  */
 export const mainActions = [
   { label: "Book", answer: "Book an appointment", action: "booking an appointment" },
-  { label: "Call", answer: "Call us", action: "calling you" },
-  { label: "Order", answer: "Order online", action: "ordering online" },
-  { label: "Visit", answer: "Visit us", action: "visiting you" },
-  { label: "Enquire", answer: "Send an enquiry", action: "sending an enquiry" },
+  { label: "Call", answer: "Call us", action: "calling you" }, // not from Figma — review before launch
+  { label: "Order", answer: "Order online", action: "ordering online" }, // not from Figma — review before launch
+  { label: "Visit", answer: "Visit us", action: "visiting you" }, // not from Figma — review before launch
+  { label: "Enquire", answer: "Send an enquiry", action: "sending an enquiry" }, // not from Figma — review before launch
 ] as const;
 
 export const clarifyCopy = {
-  first: "Sorry, I didn't quite catch that. Could you tell me a little more?",
-  second: "Just a few words is fine — {question}",
+  first: "Sorry, I didn't quite catch that. Could you tell me a little more?", // not from Figma — review before launch
+  second: "Just a few words is fine — {question}", // not from Figma — review before launch
   giveUp: "No worries, we can go through that on a call.",
   offensive: "I can't build a homepage around that. Want to tell me about your real business?",
-  sessionLimit: "Thanks, that's plenty to go on. Pop your details in and I'll show you your homepage.",
+  sessionLimit: "Thanks, that's plenty to go on. Pop your details in and I'll show you your homepage.", // not from Figma — review before launch
 } as const;
 
 export const brandingCopy = {
@@ -110,25 +110,24 @@ export const brandingCopy = {
     none: "Nothing yet",
   },
   logoReply: "I've picked these colours from your logo. Shall I use them?",
-  uploadLabel: "Upload your logo",
+  uploadLabel: "Upload your logo", // not from Figma — review before launch
   uploadHint: "PNG, SVG or JPG · up to 5MB",
   uploaded: "✓ Uploaded successfully",
   replace: "Replace file",
-  uploadTooBig: "That file is over 5MB. Please choose a smaller one.",
-  uploadWrongType: "Please upload a PNG, SVG or JPG.",
+  uploadTooBig: "That file is over 5MB. Please choose a smaller one.", // not from Figma — review before launch
+  uploadWrongType: "Please upload a PNG, SVG or JPG.", // not from Figma — review before launch
   yes: "Yes",
   change: "Change",
   coloursAsk: "What colours do you use?",
   coloursLabel: "Your colours",
-  coloursPlaceholder: "e.g. navy and gold",
+  coloursPlaceholder: "e.g. navy and gold", // not from Figma — review before launch
   openPicker: "Open colour picker",
   addColour: "+ Add colour",
   useColours: "Use colours",
   pickerReply: "Let's set the exact shades for your homepage.",
   editColour: "Edit {colour}",
-  closePicker: "Close colour picker",
+  closePicker: "Close colour picker", // not from Figma — review before launch
   hex: "HEX",
-  removeColour: "Remove {colour}",
   noneReply:
     "No problem, I'll choose colours that suit your business and the feel you described.",
   noneTitle: "{Feeling}",
@@ -161,8 +160,8 @@ export const contactCopy = {
   privacyHref: "#",
   summary: "Check the fields above to see your homepage. Your answers are still saved.",
   submit: "Show me my homepage →",
-  submitting: "Sending…",
-  serverError: "Something went wrong sending your details. Please try again.",
+  submitting: "Sending…", // not from Figma — review before launch
+  serverError: "Something went wrong sending your details. Please try again.", // not from Figma — review before launch
 } as const;
 
 export const loadingCopy = {
@@ -175,11 +174,11 @@ export const loadingCopy = {
     "Adding your '{cta}' button…",
     "Putting the finishing touches on…",
   ],
-  colourSource: { logo: "from your logo", colours: "you chose", none: "I picked for you" },
+  colourSource: { logo: "from your logo", colours: "you chose", none: "I picked for you" }, // not from Figma — review before launch
   slow: "Nearly there, good design takes a moment…",
   /** Used when the visitor's Q3 / Q5 answer was skipped after clarification. */
-  headlineFallback: "Writing your headline…",
-  ctaFallback: "Adding your main button…",
+  headlineFallback: "Writing your headline…", // not from Figma — review before launch
+  ctaFallback: "Adding your main button…", // not from Figma — review before launch
   failure: {
     title: "Your details are safe.",
     body: "Something went wrong on our side, but don't worry, we've got your details and our team will send your homepage over shortly.",
@@ -193,20 +192,20 @@ export const previewCopy = {
   emailNotice: "Your concept link has also been sent to {email}.",
   browserTitle: "{name} · Homepage concept",
   devices: { desktop: "Desktop", tablet: "Tablet", mobile: "Mobile" },
-  deviceGroup: "Preview size",
+  deviceGroup: "Preview size", // not from Figma — review before launch
   getBuilt: "Get this built",
   bookCall: "Book a call",
   changesTitle: "Want changes? That's what our designers are for.",
   changesBody: "Talk through your concept with the Royal Creative team.",
   savedLabel: "{name} · Original homepage concept",
-  revealed: "Your homepage concept is ready.",
+  revealed: "Your homepage concept is ready.", // not from Figma — review before launch
 } as const;
 
 /** "Get this built" confirmations. Figma frames share one text; the call line follows the handoff UK rules. */
 export const builtCopy = {
   eyebrow: "Your Website Concept",
   title: "We'll be in touch shortly.",
-  body: "Thank you for your interest. A member of our team will be in touch to discuss your website and the next steps",
+  body: "Thank you for your interest. A member of our team will be in touch to discuss your website and the next steps.",
   callLine: {
     today: "Brilliant! We'll give you a call today to talk through your website.",
     tomorrow: "We'll call you first thing tomorrow.",
@@ -219,29 +218,26 @@ export const bookingCopy = {
   body: "Pick a time that suits you. We already have your contact details.",
   prevMonth: "‹",
   nextMonth: "›",
-  prevMonthLabel: "Previous month",
-  nextMonthLabel: "Next month",
+  prevMonthLabel: "Previous month", // not from Figma — review before launch
+  nextMonthLabel: "Next month", // not from Figma — review before launch
   weekdays: ["M", "T", "W", "T", "F", "S", "S"],
-  slotsNote: "Illustrative available slots · UK time",
-  pickDay: "Pick a day to see times.",
-  noSlots: "No times left on this day. Please pick another.",
+  pickDay: "Pick a day to see times.", // not from Figma — review before launch
   callTypeLabel: "How would you like to talk?",
   phone: "Phone",
   video: "Video",
   phoneInfo: "We’ll contact you using your saved details.",
   videoInfo: "Video: a Google Meet link will be emailed to {email}.",
   confirmPhone: "Confirm phone call",
-  confirmVideo: "Confirm video call",
+  confirmVideo: "Confirm video call", // not from Figma — review before launch
   confirmedPhone: {
     title: "Your call is booked.",
     when: "{date} · {time} UK time",
-    note: "please check your email for verification",
+    note: "We'll email your homepage link to {email}.",
     body: "We’ll send you a confirmation email with your booking details.",
   },
   confirmedVideo: {
     title: "Your video call is booked.",
     when: "{date} · {time} UK time",
-    note: "Illustrative scheduled slot",
     body: "Your Google Meet link will be emailed to {email}.",
   },
 } as const;

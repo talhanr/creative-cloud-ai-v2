@@ -112,8 +112,8 @@ const review = {
 };
 
 export const testimonials = {
-  // Figma spells the eyebrow "Testimonals" — kept as designed, flagged for Bilal.
-  eyebrow: "Testimonals",
+  // Figma says "Testimonals" — corrected (Bilal, 2026-11-17).
+  eyebrow: "Testimonials",
   title: "What Our Clients Say About Us",
   intro:
     "See how we’ve helped businesses achieve their goals with effective solutions and reliable service. Hear from our clients about their experiences working with us.",

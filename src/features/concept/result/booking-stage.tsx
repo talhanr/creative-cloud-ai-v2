@@ -55,10 +55,7 @@ export function BookingStage({ name, email, onConfirm }: Props) {
         <div className="flex min-w-0 flex-1 flex-col gap-4">
           {day ? (
             <>
-              <div className="flex flex-col gap-1">
-                <p className="text-body font-medium text-flow-text">{formatUkDate(day.date)}</p>
-                <p className="text-caption text-flow-muted">{bookingCopy.slotsNote}</p>
-              </div>
+              <p className="text-body font-medium text-flow-text">{formatUkDate(day.date)}</p>
               <div role="group" aria-label="Times" className="flex flex-wrap gap-2">
                 {SLOT_TIMES.map((t) => (
                   <button key={t} type="button" onClick={() => setTime(t)} aria-pressed={time === t} className={chip(time === t)}>

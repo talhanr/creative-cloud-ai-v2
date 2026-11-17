@@ -11,7 +11,9 @@ export function BookedStage({ booking, email }: { booking: Booking; email: strin
       <p className="text-link leading-normal tracking-normal text-flow-text">
         {fill(copy.when, { date: booking.date, time: booking.time })}
       </p>
-      <p className="text-[10px] leading-normal text-flow-subtle">{copy.note}</p>
+      {"note" in copy && (
+        <p className="text-caption leading-normal text-flow-subtle">{fill(copy.note, { email })}</p>
+      )}
       <p className="text-link leading-normal tracking-normal text-flow-subtle">{fill(copy.body, { email })}</p>
     </div>
   );

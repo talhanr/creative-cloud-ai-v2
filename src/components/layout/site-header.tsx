@@ -45,6 +45,7 @@ export function SiteHeader({ current = "/" }: { current?: string }) {
         <div className="flex items-center gap-2">
           <Link
             href={headerCta.href}
+            aria-label={headerCta.ariaLabel}
             className="hidden rounded-panel-lg bg-brand-gradient-v px-6 py-4 text-base leading-6 font-semibold text-white sm:inline-flex"
           >
             {headerCta.label}

@@ -1,3 +1,4 @@
+import { Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { footer } from "@/lib/content/site";
@@ -53,6 +54,14 @@ export function SiteFooter() {
               <IconTile src="/landing/mail.svg" />
               <a href={`mailto:${footer.email}`} className="text-body text-white hover:underline">
                 {footer.email}
+              </a>
+            </li>
+            <li className="flex items-center gap-3.5">
+              <span className="flex size-8 shrink-0 items-center justify-center rounded-chip bg-warm-gradient">
+                <Phone className="size-4 text-white" aria-hidden />
+              </span>
+              <a href={footer.phone.href} className="text-body text-white hover:underline">
+                {footer.phone.display}
               </a>
             </li>
             <li className="flex items-center gap-3.5">

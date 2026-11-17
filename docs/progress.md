@@ -67,6 +67,7 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — Next 16 keeps the previous page mounted but hidden — QA scripts must target :visible elements. Next dev badge turned off (devIndicators: false) because it covers the mobile Skip pill.
 - 2026-11-17 — Dev toggle: /concept?fail=1 makes generation fail (non-production only).
 - 2026-11-17 — Verify: QA scripts in scripts/ — test-flow (full journey), test-cta (CTAs/booking/returning), test-a11y (keyboard + reduced motion), test-businesses (10 inputs), test-widths (no overflow 390→1920), test-turns, test-prompt. Lead route logs name/email/phone to the server console (Phase 1 "log only") — remove when Phase 3 stores leads.
+- 2026-11-17 — Bilal answers: (1) Call Now → "01293 365070", tel:+441293365070, kept in src/lib/content/site.ts (`phone`); header button keeps "Call Now" text (Figma), number shown in mobile menu button + footer "Get in touch". (2) Keep handoff call-back lines. (3) Keep Modern in preview; Phase 2 template choice from Q6 covers the serif variant. (4) Copy fixed: "Testimonials"; "…and the next steps."; phone booking note → "We'll email your homepage link to {email}."; "Illustrative available slots / scheduled slot" removed. (5) Claude-written lines approved for now, tagged "// not from Figma — review before launch" in concept.ts. (6) Bank holidays → treat like weekend: "We'll call you first thing on the next working day." using gov.uk/bank-holidays.json (England & Wales) — Phase 3 task 3.8, not built yet.
 
 ## Log
 <!-- date — task — one line -->
@@ -85,3 +86,4 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.11 — Modern template from Figma (demo copy fixture matches Figma), mock generator, preview reveal with device toggle, concept label, email notice, "Want changes?" card.
 - 2026-11-17 — 1.12 — Get this built (UK callback line by Europe/London time, tested), Book a call calendar + phone/video + confirmations, welcome back + homepage returning link. E2E: scripts/test-flow.mjs, scripts/test-cta.mjs pass at 1440 and 390.
 - 2026-11-17 — 1.13 — /verify: check passes; full flow, CTAs, keyboard, reduced motion, 10 businesses, widths 390–1920 all pass. Fixed: "I'm a …" extraction, booking date timezone shift, removed 2 unused SVGs. Phase 1 complete — waiting for Bilal.
+- 2026-11-17 — Bilal's Phase 1 feedback applied (phone, copy fixes, tags, bank-holiday task added to Phase 3).

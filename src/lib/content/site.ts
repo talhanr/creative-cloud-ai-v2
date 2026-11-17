@@ -20,8 +20,10 @@ export const marketingNav: NavLink[] = [
   { label: "Social Media Management", href: "#" },
 ];
 
-// Phone number is not in Figma — ASK BILAL, link to "#" until then.
-export const headerCta = { label: "Call Now", href: "#" } as const;
+// Business phone (Bilal, 2026-11-17). Single source for every "call us" link.
+export const phone = { display: "01293 365070", href: "tel:+441293365070" } as const;
+
+export const headerCta = { label: "Call Now", href: phone.href, ariaLabel: `Call Now ${phone.display}` } as const;
 
 export const footer = {
   cta: {
@@ -41,6 +43,7 @@ export const footer = {
   ] satisfies NavLink[],
   contactTitle: "Get in touch",
   email: "hello@royalcreative.co.uk",
+  phone,
   address: "7 Argyll Ct, Crawley RH11 8ZF",
   followTitle: "Follow",
   social: [
