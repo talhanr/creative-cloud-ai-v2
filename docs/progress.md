@@ -13,9 +13,9 @@ CURRENT PHASE: Phase 1
 - [x] 0.9 Check docs/figma.md IDs against live Figma, fix wrong ones
 - [x] 1.0 Project setup
 - [x] 1.1 Design tokens + fonts
-- [ ] 1.2 Header + footer
-- [ ] 1.3 Landing page sections
-- [ ] 1.4 Hero prompt (rotating examples, submit → /concept)
+- [x] 1.2 Header + footer
+- [x] 1.3 Landing page sections
+- [x] 1.4 Hero prompt (rotating examples, submit → /concept)
 - [ ] 1.5 Content file: exact copy from Figma
 - [ ] 1.6 Mock AI service
 - [ ] 1.7 Chat shell + Getting started states
@@ -41,9 +41,21 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — Fonts: Inter + Stack Sans Headline (both Google Fonts, no files needed). Build warns Next can't make a fallback for Stack Sans Headline — harmless.
 - 2026-11-17 — Client logos in Figma are raster PNGs, not vectors, so exported as PNG (public/landing/white-logo-ink*.png). Royal Creative logo + crown symbol exported as SVG (public/brand/).
 - 2026-11-17 — Site is dark-only: shadcn semantic colours mapped to Figma tokens in :root, no light theme.
+- 2026-11-17 — Header: no mobile landing header in Figma → pill bar with menu button opening a right-hand sheet (brand tokens). Marketing dropdown not designed → simple list of marketing service pages. Phase 4 links → "#".
+- 2026-11-17 — "Call Now" has no phone number in Figma → links to "#". ASK BILAL for the number.
+- 2026-11-17 — Hero examples: handoff list (Harbour Café…) used, not the placeholder lines in the landing frame ("Modern construction website…"). Handoff wins per ai-flow.md.
+- 2026-11-17 — Below 1024px the hero follows the mobile focused-input frame 59016:23839 (44px semibold title, 2px #ff8658 focus border, 48px gradient submit). Desktop keeps the landing hero styling. Mobile frame subtitle says "homepage concept"; desktop says "website concept" — used desktop copy everywhere (one string).
+- 2026-11-17 — Prompt border: Figma's rotated outline SVGs export with a 32×32 viewBox that clips as <img>, so the four cross-fading gradient outlines are CSS (same colours/directions/timings).
+- 2026-11-17 — Figma's "arrow-right" SVG path points left (flipped on the instance) → mirrored with CSS.
+- 2026-11-17 — Loops simplified where Figma's prototype jumps: client logos + marquee bands loop seamlessly; projects auto-advance every 6s (pause on hover/focus); showcase columns follow Figma's 15s move + 3s hold. All off with reduced motion (projects then stack).
+- 2026-11-17 — Gotcha: `cn()` treats custom `text-<token>` size utilities (text-display-m, text-h1…) as colours and drops them when a colour class follows. Keep size and colour classes in separate cn calls/elements.
+- 2026-11-17 — QA helpers in scripts/: serve.sh (restart prod server on :3456), shot.mjs (full-page screenshot), test-prompt.mjs (hero prompt behaviour).
 
 ## Log
 <!-- date — task — one line -->
 - 2026-11-17 — 0.9 — All figma.md IDs valid on live page (109 nodes); added 14 missing campaign-part/component IDs.
 - 2026-11-17 — 1.0 — Next.js app set up, deps + shadcn installed, folders, providers, `npm run check` passes.
 - 2026-11-17 — 1.1 — Figma tokens in globals.css @theme, Inter + Stack Sans Headline via next/font, logo + landing assets exported.
+- 2026-11-17 — 1.2 — Floating pill header (desktop nav + Marketing dropdown, mobile sheet) and footer from Figma.
+- 2026-11-17 — 1.3 — All landing sections built (hero glow, logos, showcase, services, projects, about, testimonials, marquee, CTA); 1920 page 9484px vs Figma 9424.
+- 2026-11-17 — 1.4 — Hero prompt: handoff examples typed 40ms/held 2s/deleted 20ms, focus clears, blur resumes, Enter submits → /concept with text in store, reduced-motion static text. Tested with Playwright.

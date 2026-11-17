@@ -40,6 +40,7 @@
   --color-flow-line: rgb(255 255 255 / 0.13);
   --color-flow-text: #f8f6f3;
   --color-flow-muted: #8d8987;
+  --color-flow-subtle: #b4b1af;
   --color-bubble-ai: #141414;
   --color-bubble-user: #24211f;
   --color-avatar: #25100c;
@@ -47,6 +48,9 @@
 
   /* Gradients */
   --gradient-brand: linear-gradient(90deg, #ed106f 0%, #f44720 43.75%, #fea205 100%);
+  --gradient-brand-v: linear-gradient(180deg, #ed106f 0%, #f44720 43.75%, #fea205 100%);
+  --gradient-warm: linear-gradient(45deg, #ff2d95 25%, #ff7a00 50%, #fde047 75%);
+  --gradient-warm-cta: linear-gradient(20.83deg, #ff2d95 25%, #ff7a00 60%, #fde047 75%);
 
   /* Fonts (next/font variables set in layout.tsx) */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -76,6 +80,24 @@
   --text-link--letter-spacing: -0.28px;
   --text-caption: 12px;
 
+  --text-intro: 32px; /* section intro paragraphs */
+  --text-intro--line-height: normal;
+  --text-intro--letter-spacing: -1.5px;
+  --text-eyebrow: 24px;
+  --text-eyebrow--line-height: 24px;
+  /* Mobile adaptations (no mobile landing frame in Figma) */
+  --text-display-m: 44px;
+  --text-display-m--line-height: 1.1;
+  --text-display-m--letter-spacing: -1px;
+  --text-h1-m: 36px;
+  --text-h1-m--line-height: 1.1;
+  --text-h1-m--letter-spacing: -1px;
+  --text-intro-m: 20px;
+  --text-intro-m--line-height: 1.4;
+  --text-intro-m--letter-spacing: -0.5px;
+  --text-cta: 40px;
+  --text-cta--line-height: 1.1;
+
   /* Radii */
   --radius-chip: 8px;
   --radius-control: 12px;
@@ -91,6 +113,72 @@
   --shadow-lift: 0 12px 12px rgb(0 0 0 / 0.25);
   --shadow-glow: 0 8px 12px rgb(255 122 0 / 0.2);
   --shadow-glow-lg: 0 8px 16px rgb(255 122 0 / 0.4);
+
+  /* Landing motion (Figma timeline: 18s loop) */
+  --animate-drift-a: drift-a 18s ease-in-out infinite;
+  --animate-drift-b: drift-b 18s ease-in-out infinite;
+  --animate-marquee: marquee 18s linear infinite;
+  --animate-marquee-rev: marquee-rev 18s linear infinite;
+  --animate-logos: marquee 30s linear infinite;
+  --animate-column-down: column-down 18s linear infinite;
+  --animate-column-up: column-up 18s linear infinite;
+  --animate-border-0: border-0 18s linear infinite;
+  --animate-border-90: border-90 18s linear infinite;
+  --animate-border-180: border-180 18s linear infinite;
+  --animate-border-270: border-270 18s linear infinite;
+  --animate-caret: caret 1s steps(1) infinite;
+
+  @keyframes drift-a {
+    0%, 100% { transform: translate(0, 0); }
+    33.33% { transform: translate(160px, -65px); }
+    66.67% { transform: translate(0, 0); }
+  }
+  @keyframes drift-b {
+    0%, 100% { transform: translate(0, 0); }
+    33.33% { transform: translate(-40px, 24px); }
+    66.67% { transform: translate(0, 0); }
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes marquee-rev {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+  @keyframes column-down {
+    0% { transform: translateY(-50%); }
+    83.33%, 100% { transform: translateY(0); }
+  }
+  @keyframes column-up {
+    0% { transform: translateY(0); }
+    83.33%, 100% { transform: translateY(-50%); }
+  }
+  /* Prompt border: four gradient outlines cross-fade (Figma line / rot90 / rot180 / rot270) */
+  @keyframes border-0 {
+    0%, 8.33% { opacity: 1; }
+    16.67%, 58.33% { opacity: 0; }
+    66.67%, 100% { opacity: 1; }
+  }
+  @keyframes border-90 {
+    0%, 8.33% { opacity: 0; }
+    16.67%, 25% { opacity: 1; }
+    33.33%, 100% { opacity: 0; }
+  }
+  @keyframes border-180 {
+    0%, 25% { opacity: 0; }
+    33.33%, 41.67% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  @keyframes border-270 {
+    0%, 41.67% { opacity: 0; }
+    50%, 58.33% { opacity: 1; }
+    66.67%, 100% { opacity: 0; }
+  }
+  @keyframes caret {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
 }
 
 /* shadcn semantic aliases → Figma tokens (site is dark-only). */
@@ -164,6 +252,18 @@
   background-image: var(--gradient-brand);
 }
 
+@utility bg-brand-gradient-v {
+  background-image: var(--gradient-brand-v);
+}
+
+@utility bg-warm-gradient {
+  background-image: var(--gradient-warm);
+}
+
+@utility bg-warm-cta-gradient {
+  background-image: var(--gradient-warm-cta);
+}
+
 @utility text-brand-gradient {
   background-image: var(--gradient-brand);
   background-clip: text;
@@ -180,4 +280,20 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+/* 2px gradient outline (prompt box). Direction = Figma line rotation. */
+@utility gradient-ring-* {
+  border: 2px solid transparent;
+  background: linear-gradient(
+      calc(--value(integer) * 1deg),
+      var(--color-brand-pink) 0%,
+      var(--color-brand-alt) 43.75%,
+      var(--color-brand-amber) 100%
+    )
+    border-box;
+  mask:
+    linear-gradient(#000 0 0) padding-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
 }
