@@ -1,0 +1,12 @@
+# Coding rules
+- TypeScript strict. No `any`, no `@ts-ignore` without a one-line reason.
+- Search the codebase before creating a component, hook or util. Reuse first.
+- Server Components by default; `"use client"` only where needed (state, events, motion).
+- Small components (< ~200 lines). One component per file. Named exports.
+- All copy that appears in the AI flow lives in `src/lib/content/` (no strings scattered in JSX).
+- Validate every API input with Zod on the server. Return typed `{ ok, data | error }` responses.
+- Secrets only in `.env.local`, read only on the server. Keep `.env.example` updated (no values).
+- Every async UI has loading, error and empty states.
+- No new dependency without a reason noted in `docs/progress.md` → Decisions.
+- Don't refactor unrelated code. Keep each change scoped to the current task.
+- `npm run check` must pass before ticking a task.
