@@ -6,34 +6,46 @@ import { testimonials } from "@/lib/content/landing";
 import { cn } from "@/lib/utils";
 import { SectionIntro } from "./section-intro";
 
-// Figma "Testimonials" 58698:4091 — four cards (gap 70), dots left, arrows right.
+const reducedMotion = () => window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Figma "Testimonials" 58698:4091 — four cards, dots left, arrows right.
+// Sliding loop: the list is rendered twice and the track slides one card per step; at the end
+// it jumps back (no transition) to the matching card in the first copy. Swipe on touch.
 export function TestimonialsSection() {
-  const trackRef = useRef<HTMLUListElement>(null);
-  const [active, setActive] = useState(0);
-  const count = testimonials.items.length;
+  const items = testimonials.items;
+  const count = items.length;
+  const [pos, setPos] = useState(0); // 0..count (count = first card of the second copy)
+  const [animate, setAnimate] = useState(true);
+  const busy = useRef(false);
+  const swipeX = useRef<number | null>(null);
+  const active = pos % count;
 
-  const cardStep = () => {
-    const track = trackRef.current;
-    const first = track?.firstElementChild as HTMLElement | null;
-    if (!track || !first) return 0;
-    return first.offsetWidth + parseFloat(getComputedStyle(track).columnGap || "0");
+  const slideTo = (next: number) => {
+    if (reducedMotion()) return setPos(((next % count) + count) % count);
+    if (busy.current || next === pos) return;
+    busy.current = true;
+    if (next < 0) {
+      // Jump to the same card in the second copy, then slide back one.
+      setAnimate(false);
+      setPos(count);
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          setAnimate(true);
+          setPos(count - 1);
+        }),
+      );
+      return;
+    }
+    setAnimate(true);
+    setPos(next);
   };
 
-  const goTo = (i: number) => {
-    const track = trackRef.current;
-    if (!track) return;
-    const next = Math.max(0, Math.min(count - 1, i));
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    track.scrollTo({ left: next * cardStep(), behavior: reduce ? "auto" : "smooth" });
-    setActive(next);
-  };
-
-  const onScroll = () => {
-    const track = trackRef.current;
-    const step = cardStep();
-    if (!track || !step) return;
-    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
-    setActive(atEnd ? count - 1 : Math.round(track.scrollLeft / step));
+  const onSlideEnd = () => {
+    busy.current = false;
+    if (pos >= count) {
+      setAnimate(false);
+      setPos(pos - count);
+    }
   };
 
   return (
@@ -49,57 +61,77 @@ export function TestimonialsSection() {
         intro={testimonials.intro}
       />
       <div className="flex flex-col gap-8">
-        <ul
-          ref={trackRef}
-          onScroll={onScroll}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] lg:gap-10 [&::-webkit-scrollbar]:hidden"
+        <div
+          className="touch-pan-y overflow-hidden"
+          onPointerDown={(e) => (swipeX.current = e.clientX)}
+          onPointerUp={(e) => {
+            const dx = swipeX.current === null ? 0 : e.clientX - swipeX.current;
+            swipeX.current = null;
+            if (Math.abs(dx) > 40) slideTo(dx < 0 ? pos + 1 : pos - 1);
+          }}
         >
-          {testimonials.items.map((t, i) => (
-            <li
-              key={i}
-              aria-label={`${i + 1} of ${count}`}
-              className="flex w-[85%] shrink-0 snap-start flex-col gap-[1.5625rem] rounded-card bg-ink-3 p-6 sm:w-[calc((100%-1.5rem)/2)] xl:w-[calc((100%-13.125rem)/4)]"
-            >
-              <Image
-                src={t.logo}
-                alt={t.company}
-                width={100}
-                height={100}
-                className="size-[6.25rem] rounded-card object-cover"
-              />
-              <figure className="flex flex-col gap-8">
-                <blockquote className="flex flex-col gap-2">
-                  <Image src="/landing/testimonial-icon.svg" alt="" width={28} height={28} />
-                  <p className="text-body-lg leading-normal text-white">{t.quote}</p>
-                </blockquote>
-                <figcaption className="flex flex-col gap-2">
-                  <span className="text-body-lg leading-normal text-white">{t.name}</span>
-                  <span className="text-body leading-normal text-gray-3">{t.company}</span>
-                </figcaption>
-              </figure>
-            </li>
-          ))}
-        </ul>
+          <ul
+            onTransitionEnd={(e) => e.target === e.currentTarget && onSlideEnd()}
+            style={{ "--i": pos } as React.CSSProperties}
+            className={cn(
+              "flex gap-(--gap) [--card:85%] [--gap:1.5rem] sm:[--card:calc((100%-var(--gap))/2)] lg:[--gap:2.5rem] xl:[--card:calc((100%-3*var(--gap))/4)]",
+              "translate-x-[calc(var(--i)*-1*(var(--card)+var(--gap)))]",
+              animate && "transition-transform duration-500 ease-in-out motion-reduce:transition-none",
+            )}
+          >
+            {[...items, ...items].map((t, i) => (
+              <li
+                key={i}
+                aria-label={i < count ? `${i + 1} of ${count}` : undefined}
+                aria-hidden={i >= count || undefined}
+                inert={i >= count}
+                className="flex w-(--card) shrink-0 flex-col gap-[1.5625rem] rounded-card bg-ink-3 p-6 select-none"
+              >
+                <Image
+                  src={t.logo}
+                  alt={t.company}
+                  width={100}
+                  height={100}
+                  draggable={false}
+                  className="size-[6.25rem] rounded-card object-cover"
+                />
+                <figure className="flex flex-col gap-8">
+                  <blockquote className="flex flex-col gap-2">
+                    <Image src="/landing/testimonial-icon.svg" alt="" width={28} height={28} />
+                    <p className="text-body-lg leading-normal text-white">{t.quote}</p>
+                  </blockquote>
+                  <figcaption className="flex flex-col gap-2">
+                    <span className="text-body-lg leading-normal text-white">{t.name}</span>
+                    <span className="text-body leading-normal text-gray-3">{t.company}</span>
+                  </figcaption>
+                </figure>
+              </li>
+            ))}
+          </ul>
+        </div>
         <div className="flex items-center justify-between">
           <div className="flex gap-2">
-            {testimonials.items.map((_, i) => (
+            {items.map((_, i) => (
               <button
                 key={i}
                 type="button"
-                onClick={() => goTo(i)}
+                onClick={() => slideTo(i)}
                 aria-label={`Show testimonial ${i + 1}`}
                 aria-current={i === active}
                 className="flex size-11 items-center justify-center lg:size-6"
               >
                 <span
-                  className={cn("size-6 rounded-panel", i === active ? "bg-white" : "bg-ink-1")}
+                  className={cn(
+                    "size-6 rounded-panel transition-colors duration-300",
+                    i === active ? "bg-white" : "bg-ink-1",
+                  )}
                 />
               </button>
             ))}
           </div>
           <div className="flex gap-4">
-            <ArrowButton label={testimonials.prev} dir="left" onClick={() => goTo(active - 1)} />
-            <ArrowButton label={testimonials.next} dir="right" onClick={() => goTo(active + 1)} />
+            <ArrowButton label={testimonials.prev} dir="left" onClick={() => slideTo(pos - 1)} />
+            <ArrowButton label={testimonials.next} dir="right" onClick={() => slideTo(pos + 1)} />
           </div>
         </div>
       </div>

@@ -3,15 +3,15 @@ import { ClientLogos } from "./client-logos";
 import { HeroGlow } from "./hero-glow";
 import { HeroAction } from "./hero-action";
 
-// Figma "Hero Section" 58698:4171 — 1080 tall on desktop, logo band pinned to the bottom.
+// Figma "Hero Section" 58698:4171 — desktop hero fills the first screen (like the 1080 frame); logo band follows below the fold.
 export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative flex flex-col overflow-hidden bg-ink lg:h-[52rem]"
+      className="relative flex flex-col overflow-hidden bg-ink"
     >
       <HeroGlow />
-      <div className="relative z-10 mx-auto flex w-full max-w-[54.625rem] flex-1 flex-col items-center justify-center gap-7 px-5 pt-[11.25rem] pb-[6.25rem] lg:gap-9 lg:px-0 lg:pt-[6rem] lg:pb-0">
+      <div className="relative z-10 mx-auto flex w-full max-w-[54.625rem] flex-1 flex-col items-center justify-center gap-7 px-5 pt-[11.25rem] pb-[6.25rem] lg:min-h-svh lg:gap-9 lg:px-0 lg:pt-[6rem] lg:pb-0">
         <div className="flex flex-col items-center gap-7 text-center lg:gap-5">
           <h1
             id="hero-title"
