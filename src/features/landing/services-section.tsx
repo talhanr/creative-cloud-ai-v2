@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { services } from "@/lib/content/landing";
 import { SectionIntro } from "./section-intro";
+import { ServicesList } from "./services-list";
 
-// Figma "Services" 58698:3943 — intro + five large service rows (Stack Sans Headline 80px).
+// Figma "Services" 58698:3943 — intro + five service rows that expand on hover (prototype).
 export function ServicesSection() {
   return (
     <section
@@ -16,26 +16,7 @@ export function ServicesSection() {
         intro={services.intro}
         titleStyle="h1"
       />
-      <ul className="flex flex-col">
-        {services.items.map((item) => (
-          <li
-            key={item.label}
-            className="border-t border-b border-gray-4 py-6 font-display text-display-m font-semibold md:text-[64px] md:leading-[1.3] lg:py-10 xl:text-display"
-          >
-            {/* Colour kept out of the size classes: cn() treats custom text-* tokens as colours. */}
-            <Link
-              href={item.href}
-              className={
-                "highlighted" in item && item.highlighted
-                  ? "text-brand-gradient"
-                  : "text-white hover:text-brand-gradient"
-              }
-            >
-              {item.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <ServicesList />
     </section>
   );
 }

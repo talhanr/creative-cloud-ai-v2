@@ -28,19 +28,27 @@ export const showcaseImages = [
   { src: "/landing/image6.png", w: 1600, h: 1200 },
 ] as const;
 
+const serviceBody =
+  "Branding creates a unique identity for your business. We help build a brand that resonates with your audience.";
+
 export const services = {
   eyebrow: "Our Services",
   title: "What we do for your business?",
   intro:
     "From bespoke websites and digital platforms to SEO and creative marketing, we bring the right expertise together to help businesses build a stronger digital presence.",
   // "Web Design" is shown with the brand gradient in Figma (highlighted item).
+  // Hover/expanded state (Figma prototype): body + arrow link + laptop image.
+  // Figma uses the Branding body and the same image for every service (placeholder) — flag for Bilal.
   items: [
-    { label: "Branding", href: "#" },
-    { label: "Web Design", href: "#", highlighted: true },
-    { label: "PPC", href: "#" },
-    { label: "SEO", href: "#" },
-    { label: "Social Media Management", href: "#" },
+    { label: "Branding", href: "#", body: serviceBody },
+    { label: "Web Design", href: "#", body: serviceBody, highlighted: true },
+    { label: "PPC", href: "#", body: serviceBody },
+    { label: "SEO", href: "#", body: serviceBody },
+    { label: "Social Media Management", href: "#", body: serviceBody },
   ],
+  image: { src: "/landing/service-maison-wue.webp", alt: "Maison Wue website on a laptop" },
+  // not from Figma — review before launch
+  linkLabel: "Explore {service}",
 } as const;
 
 const projectTags = ["UI/UX Design", "Web Development", "Digital Marketing"] as const;
