@@ -14,7 +14,7 @@ export function Showcase() {
   const tiles = [...showcaseImages, ...showcaseImages];
   return (
     <section aria-label="Recent website designs" className="relative px-4 md:px-8 xl:px-[7.4375rem]">
-      <div className="relative mx-auto h-[26.25rem] max-w-[90rem] overflow-hidden rounded-panel-lg bg-ink-3 md:h-[37.5rem] lg:h-[50rem]">
+      <div className="relative mx-auto h-[26.25rem] max-w-[104rem] overflow-hidden rounded-panel-lg bg-ink-3 md:h-[37.5rem] lg:h-[50rem]">
         <div className="absolute top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 -rotate-20 gap-4">
           {columns.map((col, c) => (
             <div key={c} className={cn("w-[16.25rem] md:w-[23.75rem] lg:w-[31.0625rem]", col.offset)}>
