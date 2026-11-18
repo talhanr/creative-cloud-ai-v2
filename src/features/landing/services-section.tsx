@@ -7,7 +7,7 @@ export function ServicesSection() {
   return (
     <section
       aria-labelledby="services-title"
-      className="mx-auto flex w-full max-w-[94rem] flex-col gap-12 px-4 md:px-8 lg:gap-20"
+      className="mx-auto flex w-full max-w-[94rem] flex-col gap-10 px-4 md:px-8 lg:gap-14"
     >
       <SectionIntro
         id="services-title"
