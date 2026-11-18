@@ -8,15 +8,16 @@ export const hero = {
 } as const;
 
 // Client logos are white "ink" PNGs used as alpha masks (Figma: mask + white fill).
+// w/h = PNG pixel size; only the ratio is used (all logos drawn at one height).
 export const clientLogos = [
-  { name: "PureGym", src: "/landing/white-logo-ink.png", w: 120, h: 52 },
-  { name: "Heavenly Desserts", src: "/landing/white-logo-ink1.png", w: 130, h: 52 },
-  { name: "UK Prime Utility", src: "/landing/white-logo-ink2.png", w: 130, h: 52 },
-  { name: "Plan Burrito", src: "/landing/white-logo-ink3.png", w: 110, h: 52 },
-  { name: "Gatwick Commercials", src: "/landing/white-logo-ink4.png", w: 120, h: 60 },
-  { name: "Lighthouse", src: "/landing/white-logo-ink5.png", w: 130, h: 52 },
-  { name: "Lakshmi's", src: "/landing/white-logo-ink6.png", w: 110, h: 60 },
-  { name: "Driven Transfers", src: "/landing/white-logo-ink7.png", w: 130, h: 52 },
+  { name: "PureGym", src: "/landing/white-logo-ink.png", w: 240, h: 104 },
+  { name: "Heavenly Desserts", src: "/landing/white-logo-ink1.png", w: 260, h: 104 },
+  { name: "UK Prime Utility", src: "/landing/white-logo-ink2.png", w: 260, h: 104 },
+  { name: "Plan Burrito", src: "/landing/white-logo-ink3.png", w: 220, h: 104 },
+  { name: "Gatwick Commercials", src: "/landing/white-logo-ink4.png", w: 240, h: 120 },
+  { name: "Lighthouse", src: "/landing/white-logo-ink5.png", w: 260, h: 104 },
+  { name: "Lakshmi's", src: "/landing/white-logo-ink6.png", w: 220, h: 120 },
+  { name: "Driven Transfers", src: "/landing/white-logo-ink7.png", w: 260, h: 104 },
 ] as const;
 
 export const showcaseImages = [

@@ -17,7 +17,7 @@ export default function HomePage() {
       <SiteHeader current="/" />
       <main id="main" className="relative z-10 flex flex-col">
         <HeroSection />
-        <div className="flex flex-col gap-24 pt-0 lg:-mt-3 lg:gap-[18.75rem]">
+        <div className="flex flex-col gap-24 pt-12 lg:gap-[18.75rem] lg:pt-16">
           <Showcase />
           <ServicesSection />
           <ProjectsSection />
