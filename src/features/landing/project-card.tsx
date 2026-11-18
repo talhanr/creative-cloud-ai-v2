@@ -6,13 +6,13 @@ type Project = (typeof projects.items)[number];
 // Figma project card (58698:3978): 1682×775, #141414, 24px radius, 591px copy panel + image.
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex w-full flex-col overflow-hidden rounded-panel bg-ink-3 lg:h-[48.4375rem] lg:flex-row lg:items-stretch">
-      <div className="flex flex-col justify-between gap-8 p-6 lg:w-[36.9375rem] lg:shrink-0 lg:p-8">
+    <article className="flex w-full flex-col overflow-hidden rounded-panel bg-ink-3 lg:h-[36rem] lg:flex-row lg:items-stretch">
+      <div className="flex flex-col justify-between gap-8 p-6 lg:w-[30rem] lg:shrink-0 lg:p-8">
         <div className="flex flex-col gap-6 lg:gap-10">
           <h3 className="text-[2rem] leading-normal tracking-[-1.5px] text-white lg:text-h2 lg:leading-normal">
             {project.name}
           </h3>
-          <p className="text-body leading-normal text-white lg:max-w-[32.9375rem]">{project.body}</p>
+          <p className="text-body leading-normal text-white lg:max-w-[26rem]">{project.body}</p>
         </div>
         <ul className="flex flex-wrap gap-3 lg:flex-col lg:items-start lg:gap-4">
           {project.tags.map((tag) => (

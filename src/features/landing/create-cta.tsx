@@ -12,7 +12,7 @@ export function CreateCta() {
         <p className="text-[1.1875rem] leading-7 text-white">{createCta.eyebrow}</p>
         <h2
           id="create-title"
-          className="text-h1-m font-bold text-white md:text-[3.25rem] md:leading-[1.1] xl:text-h1"
+          className="text-h1-m font-bold text-white md:text-[2.75rem] md:leading-[1.1] xl:text-h1"
         >
           {createCta.title}
         </h2>

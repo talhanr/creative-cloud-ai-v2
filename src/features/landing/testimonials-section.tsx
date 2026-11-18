@@ -40,7 +40,7 @@ export function TestimonialsSection() {
     <section
       aria-labelledby="testimonials-title"
       aria-roledescription="carousel"
-      className="mx-auto flex w-full max-w-[108rem] flex-col gap-12 px-4 md:px-8 lg:gap-[7.5rem]"
+      className="mx-auto flex w-full max-w-[108rem] flex-col gap-12 px-4 md:px-8 lg:gap-16"
     >
       <SectionIntro
         id="testimonials-title"
@@ -52,7 +52,7 @@ export function TestimonialsSection() {
         <ul
           ref={trackRef}
           onScroll={onScroll}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] lg:gap-[4.375rem] [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] lg:gap-10 [&::-webkit-scrollbar]:hidden"
         >
           {testimonials.items.map((t, i) => (
             <li

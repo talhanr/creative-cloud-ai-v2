@@ -8,10 +8,10 @@ export function HeroSection() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="relative flex flex-col overflow-hidden bg-ink lg:h-[67.5rem]"
+      className="relative flex flex-col overflow-hidden bg-ink lg:h-[52rem]"
     >
       <HeroGlow />
-      <div className="relative z-10 mx-auto flex w-full max-w-[54.625rem] flex-1 flex-col items-center justify-center gap-7 px-5 pt-[11.25rem] pb-[6.25rem] lg:gap-9 lg:px-0 lg:pt-[8.75rem] lg:pb-0">
+      <div className="relative z-10 mx-auto flex w-full max-w-[54.625rem] flex-1 flex-col items-center justify-center gap-7 px-5 pt-[11.25rem] pb-[6.25rem] lg:gap-9 lg:px-0 lg:pt-[6rem] lg:pb-0">
         <div className="flex flex-col items-center gap-7 text-center lg:gap-5">
           <h1
             id="hero-title"

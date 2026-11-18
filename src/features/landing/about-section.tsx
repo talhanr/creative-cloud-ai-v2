@@ -16,7 +16,7 @@ export function AboutSection() {
           </p>
           <h2
             id="about-title"
-            className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.66px] text-white md:text-[3.5rem] xl:text-[4.125rem]"
+            className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.66px] text-white md:text-[3rem] xl:text-[3.25rem]"
           >
             {about.titleLines[0]}
             <br />
@@ -32,7 +32,7 @@ export function AboutSection() {
             {about.link.label}
           </Link>
         </div>
-        <div className="relative aspect-[842/570] w-full overflow-hidden rounded-[1.25rem] lg:w-[52.625rem]">
+        <div className="relative aspect-[842/570] w-full overflow-hidden rounded-[1.25rem] lg:w-[44rem]">
           <Image
             src={about.image.src}
             alt={about.image.alt}

@@ -17,14 +17,14 @@ export default function HomePage() {
       <SiteHeader current="/" />
       <main id="main" className="relative z-10 flex flex-col">
         <HeroSection />
-        <div className="flex flex-col gap-24 pt-12 lg:gap-[18.75rem] lg:pt-16">
+        <div className="flex flex-col gap-24 lg:gap-[10rem]">
           <Showcase />
           <ServicesSection />
           <ProjectsSection />
           <AboutSection />
           <TestimonialsSection />
         </div>
-        <div className="mt-16 lg:mt-[12.5rem]">
+        <div className="mt-16 lg:mt-[8rem]">
           <MarqueeBands />
         </div>
         <div className="mt-8 lg:mt-16">
@@ -38,7 +38,7 @@ export default function HomePage() {
       >
         <Image src="/landing/bg.svg" alt="" fill className="object-cover" />
       </div>
-      <div className="relative z-10 mt-16 lg:mt-[13.75rem]">
+      <div className="relative z-10 mt-16 lg:mt-[8rem]">
         <SiteFooter />
       </div>
     </div>

@@ -63,6 +63,7 @@ CURRENT PHASE: Phase 1
 - 2026-11-18 — Bilal: services too big → row titles 80→56px, row padding 40→24px, open panel shorter, body 28→22px, image 688→480px wide (fits inside open row). Smaller than Figma on purpose.
 - 2026-11-18 — Bilal: less side space → landing content column 90rem → 104rem (1440: ~96px each side, 1920: ~232px).
 - 2026-11-18 — Bilal: logo band → all logos one height (64px desktop, ratio from PNG), wider spacing, band uses padding not fixed 140px, showcase no longer overlaps band (Figma -12px overlap removed).
+- 2026-11-18 — Bilal: showcase attached flush under logo band (no gap). Whole landing sized down (size only, no colour/copy change): display 80→60px, h1 66→52, intro 32→24, eyebrow 24→18, CTA 40→32; section gaps 300→160; hero 1080→832 tall; showcase 800→608; project card 775→576; marquee 608→448. (px = rem×16, then scaled by root.)
 - 2026-11-17 — Q7 colours: picker opens inline in the colours card (Figma shows an extra "Let's set the exact shades…" AI bubble first — skipped to keep the card in one place). Logo upload is client-side only; logo never sent to the server, saved in localStorage only if under ~1.5MB. Upload before-state ("Upload your logo" button) isn't in Figma — built in the same card style.
 - 2026-11-17 — Q5: composer still shown so visitors can type their own action (Figma shows it too).
 - 2026-11-17 — Contact header shows "One last step" + dots on both default and error states (Figma default shows dots only).
