@@ -8,7 +8,7 @@ import { MobileMenu } from "./mobile-menu";
 export function SiteHeader({ current = "/" }: { current?: string }) {
   return (
     <header className="absolute inset-x-0 top-4 z-40 px-4 md:px-8 lg:top-[3.0625rem] xl:px-[7.4375rem]">
-      <div className="mx-auto flex h-16 max-w-[105.125rem] items-center justify-between rounded-pill bg-ink-2 py-3 pr-3 pl-5 shadow-lift lg:h-20 lg:pr-6 lg:pl-8">
+      <div className="mx-auto flex h-16 max-w-[90rem] items-center justify-between rounded-pill bg-ink-2 py-3 pr-3 pl-5 shadow-lift lg:h-20 lg:pr-6 lg:pl-8">
         <Link href="/" aria-label="Royal Creative home" className="shrink-0 rounded-pill">
           <Image
             src="/brand/logo.svg"

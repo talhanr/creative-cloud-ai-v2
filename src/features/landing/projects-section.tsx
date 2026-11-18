@@ -26,7 +26,7 @@ export function ProjectsSection() {
   return (
     <section
       aria-labelledby="projects-title"
-      className="mx-auto flex w-full max-w-[109.125rem] flex-col gap-12 px-4 md:px-8 lg:gap-[7.5rem]"
+      className="mx-auto flex w-full max-w-[94rem] flex-col gap-12 px-4 md:px-8 lg:gap-[7.5rem]"
     >
       <SectionIntro
         id="projects-title"

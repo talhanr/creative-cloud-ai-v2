@@ -362,10 +362,10 @@
 /*
  * Landing is drawn on a 1920 frame with fixed sizes (now in rem). On desktop widths the root
  * size follows the viewport so laptops see Figma's proportions instead of a zoomed-in page:
- * 1920+ → 16px, 1680 → 14px, ≤1560 → 13px. Below 1024 (mobile/tablet) nothing changes.
+ * 1920+ → 14px, ≤1646 → 12px. Content column is 90rem wide. Below 1024 nothing changes.
  */
 @media (min-width: 64rem) {
   html:has([data-fluid-root]) {
-    font-size: clamp(81.25%, 0.8333vw, 100%);
+    font-size: clamp(75%, 0.729vw, 87.5%);
   }
 }

@@ -7,7 +7,7 @@ import { BackToTop } from "./back-to-top";
 // Figma "Footer" 58698:3758 (1920 frame, 120px side padding, 80px gaps).
 export function SiteFooter() {
   return (
-    <footer className="relative mx-auto flex w-full max-w-[120rem] flex-col gap-12 px-4 pt-16 md:px-8 lg:gap-20 lg:pt-20 xl:px-[7.5rem]">
+    <footer className="relative mx-auto flex w-full max-w-[105rem] flex-col gap-12 px-4 pt-16 md:px-8 lg:gap-20 lg:pt-20 xl:px-[7.5rem]">
       <section
         aria-label="Start a project"
         className="flex flex-col items-start gap-6 rounded-panel bg-gray-950 px-6 py-8 md:flex-row md:items-center md:justify-between md:px-16 md:py-12"

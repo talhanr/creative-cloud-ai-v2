@@ -7,7 +7,7 @@ export function AboutSection() {
   return (
     <section
       aria-labelledby="about-title"
-      className="mx-auto flex w-full max-w-[109.125rem] flex-col gap-10 px-4 md:px-8"
+      className="mx-auto flex w-full max-w-[94rem] flex-col gap-10 px-4 md:px-8"
     >
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-20">
         <div className="flex flex-col gap-6 lg:w-[47.5rem] lg:shrink-0">
