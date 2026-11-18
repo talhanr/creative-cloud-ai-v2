@@ -13,18 +13,18 @@ import { TestimonialsSection } from "@/features/landing/testimonials-section";
 // Landing "Home new" (Figma 58698:3757, 1920 frame). Section gaps follow Figma offsets.
 export default function HomePage() {
   return (
-    <div className="relative flex min-h-screen flex-col overflow-x-clip bg-ink">
+    <div data-fluid-root className="relative flex min-h-screen flex-col overflow-x-clip bg-ink">
       <SiteHeader current="/" />
       <main id="main" className="relative z-10 flex flex-col">
         <HeroSection />
-        <div className="flex flex-col gap-24 pt-0 lg:-mt-3 lg:gap-[300px]">
+        <div className="flex flex-col gap-24 pt-0 lg:-mt-3 lg:gap-[18.75rem]">
           <Showcase />
           <ServicesSection />
           <ProjectsSection />
           <AboutSection />
           <TestimonialsSection />
         </div>
-        <div className="mt-16 lg:mt-[200px]">
+        <div className="mt-16 lg:mt-[12.5rem]">
           <MarqueeBands />
         </div>
         <div className="mt-8 lg:mt-16">
@@ -34,11 +34,11 @@ export default function HomePage() {
       {/* Figma "bg": warm glow behind the CTA + footer */}
       <div
         aria-hidden
-        className="pointer-events-none absolute bottom-0 left-1/2 h-[1080px] w-[1920px] -translate-x-1/2"
+        className="pointer-events-none absolute bottom-0 left-1/2 h-[67.5rem] w-[120rem] -translate-x-1/2"
       >
         <Image src="/landing/bg.svg" alt="" fill className="object-cover" />
       </div>
-      <div className="relative z-10 mt-16 lg:mt-[220px]">
+      <div className="relative z-10 mt-16 lg:mt-[13.75rem]">
         <SiteFooter />
       </div>
     </div>

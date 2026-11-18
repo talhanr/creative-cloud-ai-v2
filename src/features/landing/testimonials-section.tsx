@@ -40,7 +40,7 @@ export function TestimonialsSection() {
     <section
       aria-labelledby="testimonials-title"
       aria-roledescription="carousel"
-      className="mx-auto flex w-full max-w-[1682px] flex-col gap-12 px-4 md:px-8 lg:gap-[120px] xl:px-0"
+      className="mx-auto flex w-full max-w-[109.125rem] flex-col gap-12 px-4 md:px-8 lg:gap-[7.5rem]"
     >
       <SectionIntro
         id="testimonials-title"
@@ -52,20 +52,20 @@ export function TestimonialsSection() {
         <ul
           ref={trackRef}
           onScroll={onScroll}
-          className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] lg:gap-[70px] [&::-webkit-scrollbar]:hidden"
+          className="flex snap-x snap-mandatory gap-6 overflow-x-auto [scrollbar-width:none] lg:gap-[4.375rem] [&::-webkit-scrollbar]:hidden"
         >
           {testimonials.items.map((t, i) => (
             <li
               key={i}
               aria-label={`${i + 1} of ${count}`}
-              className="flex w-[85%] shrink-0 snap-start flex-col gap-[25px] rounded-card bg-ink-3 p-6 sm:w-[calc((100%-24px)/2)] xl:w-[calc((100%-210px)/4)]"
+              className="flex w-[85%] shrink-0 snap-start flex-col gap-[1.5625rem] rounded-card bg-ink-3 p-6 sm:w-[calc((100%-1.5rem)/2)] xl:w-[calc((100%-13.125rem)/4)]"
             >
               <Image
                 src={t.logo}
                 alt={t.company}
                 width={100}
                 height={100}
-                className="size-[100px] rounded-card object-cover"
+                className="size-[6.25rem] rounded-card object-cover"
               />
               <figure className="flex flex-col gap-8">
                 <blockquote className="flex flex-col gap-2">

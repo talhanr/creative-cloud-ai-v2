@@ -15,7 +15,7 @@ export function HeroAction() {
   const returning = useSyncExternalStore(subscribe, finished, () => false);
   if (!returning) {
     return (
-      <div className="lg:mx-auto lg:w-[740px]">
+      <div className="lg:mx-auto lg:w-[46.25rem]">
         <PromptBox mode="rotate" />
       </div>
     );

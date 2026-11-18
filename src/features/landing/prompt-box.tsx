@@ -63,7 +63,7 @@ export function PromptBox({ mode = "rotate", placeholder, className }: Props) {
       onSubmit={submit}
       className={cn(
         "relative flex w-full items-center gap-2 rounded-bubble border-2 bg-ink-3 p-2 transition-colors",
-        "lg:h-[124px] lg:items-stretch lg:rounded-card lg:border-0 lg:bg-ink-2 lg:p-4",
+        "lg:h-[7.75rem] lg:items-stretch lg:rounded-card lg:border-0 lg:bg-ink-2 lg:p-4",
         focused || hasText ? "border-brand-soft lg:ring-2 lg:ring-brand-soft" : "border-flow-line",
         className,
       )}

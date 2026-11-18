@@ -69,62 +69,62 @@
   --font-display: var(--font-stack-headline), var(--font-inter), ui-sans-serif, sans-serif;
 
   /* Type scale (size / line-height / tracking) */
-  --text-display: 80px;
-  --text-display--line-height: 104px;
+  --text-display: 5rem;
+  --text-display--line-height: 6.5rem;
   --text-display--letter-spacing: -1.5px;
-  --text-h1: 66px;
-  --text-h1--line-height: 66.324px;
-  --text-h1--letter-spacing: -2.4871px;
-  --text-h2: 48px;
+  --text-h1: 4.125rem;
+  --text-h1--line-height: 4.1452rem;
+  --text-h1--letter-spacing: -0.1554rem;
+  --text-h2: 3rem;
   --text-h2--line-height: 1.1;
-  --text-h3: 32px;
-  --text-h4: 28px;
-  --text-h4--line-height: 28px;
-  --text-h5: 24px;
-  --text-lead: 20px;
+  --text-h3: 2rem;
+  --text-h4: 1.75rem;
+  --text-h4--line-height: 1.75rem;
+  --text-h5: 1.5rem;
+  --text-lead: 1.25rem;
   --text-lead--line-height: 1.45;
-  --text-body-lg: 18px;
+  --text-body-lg: 1.125rem;
   --text-body-lg--line-height: 1.45;
-  --text-body: 16px;
+  --text-body: 1rem;
   --text-body--line-height: 1.6;
-  --text-link: 14px;
-  --text-link--line-height: 21px;
+  --text-link: 0.875rem;
+  --text-link--line-height: 1.3125rem;
   --text-link--letter-spacing: -0.28px;
-  --text-caption: 12px;
+  --text-caption: 0.75rem;
 
-  --text-intro: 32px; /* section intro paragraphs */
+  --text-intro: 2rem; /* section intro paragraphs */
   --text-intro--line-height: normal;
   --text-intro--letter-spacing: -1.5px;
-  --text-eyebrow: 24px;
-  --text-eyebrow--line-height: 24px;
+  --text-eyebrow: 1.5rem;
+  --text-eyebrow--line-height: 1.5rem;
   /* Mobile adaptations (no mobile landing frame in Figma) */
-  --text-display-m: 44px;
+  --text-display-m: 2.75rem;
   --text-display-m--line-height: 1.1;
   --text-display-m--letter-spacing: -1px;
-  --text-h1-m: 36px;
+  --text-h1-m: 2.25rem;
   --text-h1-m--line-height: 1.1;
   --text-h1-m--letter-spacing: -1px;
-  --text-intro-m: 20px;
+  --text-intro-m: 1.25rem;
   --text-intro-m--line-height: 1.4;
   --text-intro-m--letter-spacing: -0.5px;
-  --text-cta: 40px;
+  --text-cta: 2.5rem;
   --text-cta--line-height: 1.1;
 
   /* Radii */
-  --radius-chip: 8px;
-  --radius-control: 12px;
-  --radius-card: 16px;
-  --radius-bubble: 18px;
-  --radius-bubble-tail: 6px;
-  --radius-panel: 24px;
-  --radius-panel-lg: 32px;
-  --radius-pill: 9999px;
+  --radius-chip: 0.5rem;
+  --radius-control: 0.75rem;
+  --radius-card: 1rem;
+  --radius-bubble: 1.125rem;
+  --radius-bubble-tail: 0.375rem;
+  --radius-panel: 1.5rem;
+  --radius-panel-lg: 2rem;
+  --radius-pill: 624.9375rem;
 
   /* Shadows */
-  --shadow-soft: 0 4px 6px rgb(0 0 0 / 0.25);
-  --shadow-lift: 0 12px 12px rgb(0 0 0 / 0.25);
-  --shadow-glow: 0 8px 12px rgb(255 122 0 / 0.2);
-  --shadow-glow-lg: 0 8px 16px rgb(255 122 0 / 0.4);
+  --shadow-soft: 0 0.25rem 0.375rem rgb(0 0 0 / 0.25);
+  --shadow-lift: 0 0.75rem 0.75rem rgb(0 0 0 / 0.25);
+  --shadow-glow: 0 0.5rem 0.75rem rgb(255 122 0 / 0.2);
+  --shadow-glow-lg: 0 0.5rem 1rem rgb(255 122 0 / 0.4);
 
   /* Landing motion (Figma timeline: 18s loop) */
   --animate-drift-a: drift-a 18s ease-in-out infinite;
@@ -146,12 +146,12 @@
 
   @keyframes drift-a {
     0%, 100% { transform: translate(0, 0); }
-    33.33% { transform: translate(160px, -65px); }
+    33.33% { transform: translate(10rem, -4.0625rem); }
     66.67% { transform: translate(0, 0); }
   }
   @keyframes drift-b {
     0%, 100% { transform: translate(0, 0); }
-    33.33% { transform: translate(-40px, 24px); }
+    33.33% { transform: translate(-2.5rem, 1.5rem); }
     66.67% { transform: translate(0, 0); }
   }
   @keyframes marquee {
@@ -203,7 +203,7 @@
     to { opacity: 1; }
   }
   @keyframes rise-in {
-    from { opacity: 0; transform: translateY(8px); }
+    from { opacity: 0; transform: translateY(0.5rem); }
     to { opacity: 1; transform: translateY(0); }
   }
   @keyframes caret {
@@ -357,4 +357,15 @@
     radial-gradient(ellipse 15% 15% at 10% 45%, rgb(237 16 111 / 0.05), transparent),
     radial-gradient(ellipse 15% 15% at 90% 45%, rgb(254 162 5 / 0.05), transparent);
   background-size: 100% 100%;
+}
+
+/*
+ * Landing is drawn on a 1920 frame with fixed sizes (now in rem). On desktop widths the root
+ * size follows the viewport so laptops see Figma's proportions instead of a zoomed-in page:
+ * 1920+ → 16px, 1680 → 14px, ≤1560 → 13px. Below 1024 (mobile/tablet) nothing changes.
+ */
+@media (min-width: 64rem) {
+  html:has([data-fluid-root]) {
+    font-size: clamp(81.25%, 0.8333vw, 100%);
+  }
 }

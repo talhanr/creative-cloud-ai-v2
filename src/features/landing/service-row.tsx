@@ -28,8 +28,8 @@ export function ServiceRow(p: Props) {
     // Desktop: image is absolute on the right so collapsed titles keep the full row width.
     <div className="relative flex flex-col gap-6 py-6 lg:py-10">
       {/* When open, leave room for the image (gap 24px) so text never runs under it. */}
-      <div className={cn("flex flex-col", p.open && "lg:pr-[calc(45%+24px)] xl:pr-[712px]")}>
-        <h3 className="font-display text-display-m font-semibold md:text-[64px] md:leading-[1.3] xl:text-display">
+      <div className={cn("flex flex-col", p.open && "lg:pr-[calc(45%+1.5rem)] xl:pr-[44.5rem]")}>
+        <h3 className="font-display text-display-m font-semibold md:text-[4rem] md:leading-[1.3] xl:text-display">
           {/* Colour kept out of the size classes: cn() treats custom text-* tokens as colours. */}
           <button
             type="button"
@@ -46,8 +46,8 @@ export function ServiceRow(p: Props) {
         </h3>
         <div id={p.panelId} className={collapse(p.open)} inert={!p.open}>
           <div className="overflow-hidden">
-            <div className="flex flex-col gap-8 pt-6 lg:min-h-[376px] lg:pt-12">
-              <p className="max-w-[740px] pl-2.5 text-[20px] leading-[1.4] text-white md:text-h4 md:leading-[1.4]">
+            <div className="flex flex-col gap-8 pt-6 lg:min-h-[23.5rem] lg:pt-12">
+              <p className="max-w-[46.25rem] pl-2.5 text-[1.25rem] leading-[1.4] text-white md:text-h4 md:leading-[1.4]">
                 {p.body}
               </p>
               <Link
@@ -62,7 +62,7 @@ export function ServiceRow(p: Props) {
         </div>
       </div>
       <div
-        className={cn(collapse(p.open), "lg:absolute lg:top-10 lg:right-0 lg:w-[45%] xl:w-[688px]")}
+        className={cn(collapse(p.open), "lg:absolute lg:top-10 lg:right-0 lg:w-[45%] xl:w-[43rem]")}
         inert={!p.open}
       >
         <div className="overflow-hidden">

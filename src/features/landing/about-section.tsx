@@ -7,22 +7,22 @@ export function AboutSection() {
   return (
     <section
       aria-labelledby="about-title"
-      className="mx-auto flex w-full max-w-[1682px] flex-col gap-10 px-4 md:px-8 xl:px-0"
+      className="mx-auto flex w-full max-w-[109.125rem] flex-col gap-10 px-4 md:px-8"
     >
       <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:gap-20">
-        <div className="flex flex-col gap-6 lg:w-[760px] lg:shrink-0">
+        <div className="flex flex-col gap-6 lg:w-[47.5rem] lg:shrink-0">
           <p className="text-lead leading-[1.45] font-medium text-brand uppercase">
             {about.eyebrow}
           </p>
           <h2
             id="about-title"
-            className="font-display text-[40px] leading-[1.1] tracking-[-0.66px] text-white md:text-[56px] xl:text-[66px]"
+            className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.66px] text-white md:text-[3.5rem] xl:text-[4.125rem]"
           >
             {about.titleLines[0]}
             <br />
             {about.titleLines[1]}
           </h2>
-          <p className="text-[18px] leading-[1.45] text-gray-2 md:text-h5 md:leading-[1.45]">
+          <p className="text-[1.125rem] leading-[1.45] text-gray-2 md:text-h5 md:leading-[1.45]">
             {about.body}
           </p>
           <Link
@@ -32,7 +32,7 @@ export function AboutSection() {
             {about.link.label}
           </Link>
         </div>
-        <div className="relative aspect-[842/570] w-full overflow-hidden rounded-[20px] lg:w-[842px]">
+        <div className="relative aspect-[842/570] w-full overflow-hidden rounded-[1.25rem] lg:w-[52.625rem]">
           <Image
             src={about.image.src}
             alt={about.image.alt}

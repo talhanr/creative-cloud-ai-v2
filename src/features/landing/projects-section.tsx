@@ -26,7 +26,7 @@ export function ProjectsSection() {
   return (
     <section
       aria-labelledby="projects-title"
-      className="mx-auto flex w-full max-w-[1682px] flex-col gap-12 px-4 md:px-8 lg:gap-[120px] xl:px-0"
+      className="mx-auto flex w-full max-w-[109.125rem] flex-col gap-12 px-4 md:px-8 lg:gap-[7.5rem]"
     >
       <SectionIntro
         id="projects-title"
@@ -35,7 +35,7 @@ export function ProjectsSection() {
         intro={projects.intro}
       />
       <div
-        className={cn(animated && "lg:h-[775px] lg:overflow-hidden")}
+        className={cn(animated && "lg:h-[48.4375rem] lg:overflow-hidden")}
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
         onFocusCapture={() => setPaused(true)}
@@ -47,7 +47,7 @@ export function ProjectsSection() {
             animated &&
               "lg:translate-y-(--slide) lg:transition-transform lg:duration-700 lg:ease-in-out",
           )}
-          style={{ "--slide": `calc(${index} * -855px)` } as React.CSSProperties}
+          style={{ "--slide": `calc(${index} * -53.4375rem)` } as React.CSSProperties}
         >
           {projects.items.map((p, i) => (
             <div

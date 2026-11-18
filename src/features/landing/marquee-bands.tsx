@@ -9,7 +9,7 @@ export function MarqueeBands() {
   return (
     <section
       aria-label={marqueeWords.join(", ")}
-      className="relative h-[320px] overflow-hidden md:h-[460px] lg:h-[608px]"
+      className="relative h-[20rem] overflow-hidden md:h-[28.75rem] lg:h-[38rem]"
     >
       <Band
         className="top-[30%] rotate-[15.27deg] bg-white"
@@ -59,7 +59,7 @@ function Band({
               <Fragment key={`${half}-${i}`}>
                 <span
                   className={cn(
-                    "font-display text-[44px] leading-[1.3] font-semibold whitespace-nowrap md:text-[64px] lg:text-display",
+                    "font-display text-[2.75rem] leading-[1.3] font-semibold whitespace-nowrap md:text-[4rem] lg:text-display",
                     textClass,
                   )}
                 >

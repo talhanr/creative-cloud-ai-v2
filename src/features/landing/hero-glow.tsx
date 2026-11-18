@@ -6,12 +6,12 @@ export function HeroGlow() {
   return (
     <div
       aria-hidden
-      className="pointer-events-none absolute top-0 left-1/2 h-full w-[1920px] -translate-x-1/2"
+      className="pointer-events-none absolute top-0 left-1/2 h-full w-[120rem] -translate-x-1/2"
     >
-      <div className="absolute top-[-144px] left-[-743px] h-[1427px] w-[1622px] animate-drift-a">
+      <div className="absolute top-[-9rem] left-[-46.4375rem] h-[89.1875rem] w-[101.375rem] animate-drift-a">
         <Image src="/landing/ellipse448.svg" alt="" width={1622} height={1427} priority />
       </div>
-      <div className="absolute top-[-144px] left-[1081px] h-[1463px] w-[1544px] animate-drift-b">
+      <div className="absolute top-[-9rem] left-[67.5625rem] h-[91.4375rem] w-[96.5rem] animate-drift-b">
         <Image src="/landing/ellipse446.svg" alt="" width={1544} height={1463} priority />
       </div>
     </div>
