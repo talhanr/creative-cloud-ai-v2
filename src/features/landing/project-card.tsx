@@ -14,7 +14,7 @@ export function ProjectCard({ project }: { project: Project }) {
           </h3>
           <p className="text-body leading-normal text-white lg:max-w-[527px]">{project.body}</p>
         </div>
-        <ul className="flex flex-wrap gap-3 lg:flex-col lg:gap-4">
+        <ul className="flex flex-wrap gap-3 lg:flex-col lg:items-start lg:gap-4">
           {project.tags.map((tag) => (
             <li
               key={tag}

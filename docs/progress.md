@@ -89,3 +89,4 @@ CURRENT PHASE: Phase 1
 - 2026-11-17 — 1.13 — /verify: check passes; full flow, CTAs, keyboard, reduced motion, 10 businesses, widths 390–1920 all pass. Fixed: "I'm a …" extraction, booking date timezone shift, removed 2 unused SVGs. Phase 1 complete — waiting for Bilal.
 - 2026-11-17 — Bilal's Phase 1 feedback applied (phone, copy fixes, tags, bank-holiday task added to Phase 3).
 - 2026-11-18 — Services rows expand on hover/tap with body, arrow link and laptop image (Figma prototype); check + widths + a11y pass.
+- 2026-11-18 — Project card tag pills hug their text on desktop (were stretching full panel width).
