@@ -9,7 +9,7 @@ export function ProjectCard({ project }: { project: Project }) {
     <article className="flex w-full flex-col overflow-hidden rounded-panel bg-ink-3 lg:h-[36rem] lg:flex-row lg:items-stretch">
       <div className="flex flex-col justify-between gap-8 p-6 lg:w-[30rem] lg:shrink-0 lg:p-8">
         <div className="flex flex-col gap-6 lg:gap-10">
-          <h3 className="text-[2rem] leading-normal tracking-[-1.5px] text-white lg:text-h2 lg:leading-normal">
+          <h3 className="text-[2rem] leading-normal tracking-[-1.5px] text-white lg:text-[2rem] lg:leading-normal">
             {project.name}
           </h3>
           <p className="text-body leading-normal text-white lg:max-w-[26rem]">{project.body}</p>

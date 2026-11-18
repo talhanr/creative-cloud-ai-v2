@@ -59,7 +59,7 @@ function Band({
               <Fragment key={`${half}-${i}`}>
                 <span
                   className={cn(
-                    "font-display text-[2.75rem] leading-[1.3] font-semibold whitespace-nowrap md:text-[3rem] lg:text-display",
+                    "font-display text-[2.75rem] leading-[1.3] font-semibold whitespace-nowrap md:text-[2.25rem] lg:text-display",
                     textClass,
                   )}
                 >

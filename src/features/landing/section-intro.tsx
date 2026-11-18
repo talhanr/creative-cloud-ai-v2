@@ -21,14 +21,14 @@ export function SectionIntro({ eyebrow, title, intro, titleStyle = "display", id
           id={id}
           className={cn(
             titleStyle === "display"
-              ? "font-display text-display-m font-normal md:text-[3.25rem] md:leading-[1.2] xl:text-display xl:leading-[4.75rem]"
-              : "text-h1-m font-bold md:text-[3.25rem] md:leading-[1.1] xl:text-h1",
+              ? "font-display text-display-m font-normal md:text-[2.5rem] md:leading-[1.2] xl:text-display xl:leading-[3.6rem]"
+              : "text-h1-m font-bold md:text-[2.25rem] md:leading-[1.1] xl:text-h1",
           )}
         >
           {title}
         </h2>
       </div>
-      <p className="text-intro-m text-gray-3 md:text-[1.375rem] lg:pr-5 xl:text-intro">{intro}</p>
+      <p className="text-intro-m text-gray-3 md:text-[1.25rem] lg:pr-5 xl:text-intro">{intro}</p>
     </div>
   );
 }

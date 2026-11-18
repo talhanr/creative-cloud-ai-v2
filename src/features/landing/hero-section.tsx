@@ -15,7 +15,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center gap-7 text-center lg:gap-5">
           <h1
             id="hero-title"
-            className="text-[2.75rem] leading-[1.08] font-semibold text-flow-text md:text-[3.5rem] lg:text-h1 lg:font-bold lg:whitespace-nowrap lg:text-white"
+            className="text-[2.75rem] leading-[1.08] font-semibold text-flow-text md:text-[2.75rem] lg:text-h1 lg:font-bold lg:whitespace-nowrap lg:text-white"
           >
             {hero.title}
           </h1>

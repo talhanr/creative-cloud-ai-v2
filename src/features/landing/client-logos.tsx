@@ -4,7 +4,8 @@ import { clientLogos, hero } from "@/lib/content/landing";
 // Figma slides the row 710px then jumps back; built as a seamless loop instead.
 // All logos share one height (width from each PNG's ratio) so the row sits on one line.
 export function ClientLogos() {
-  const row = [...clientLogos, ...clientLogos];
+  // 4 copies (two per half) so each half is wider than any screen → no gap when the loop restarts.
+  const row = [...clientLogos, ...clientLogos, ...clientLogos, ...clientLogos];
   return (
     <section
       aria-label={hero.logosTitle}

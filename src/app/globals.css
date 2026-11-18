@@ -69,12 +69,12 @@
   --font-display: var(--font-stack-headline), var(--font-inter), ui-sans-serif, sans-serif;
 
   /* Type scale (size / line-height / tracking) */
-  --text-display: 3.75rem;
-  --text-display--line-height: 4.75rem;
+  --text-display: 3rem;
+  --text-display--line-height: 3.6rem;
   --text-display--letter-spacing: -1.5px;
-  --text-h1: 3.25rem;
-  --text-h1--line-height: 3.4rem;
-  --text-h1--letter-spacing: -0.1rem;
+  --text-h1: 2.5rem;
+  --text-h1--line-height: 2.75rem;
+  --text-h1--letter-spacing: -0.06rem;
   --text-h2: 2.5rem;
   --text-h2--line-height: 1.1;
   --text-h3: 2rem;
@@ -92,10 +92,10 @@
   --text-link--letter-spacing: -0.28px;
   --text-caption: 0.75rem;
 
-  --text-intro: 1.5rem; /* section intro paragraphs */
+  --text-intro: 1.25rem; /* section intro paragraphs */
   --text-intro--line-height: normal;
   --text-intro--letter-spacing: -0.5px;
-  --text-eyebrow: 1.125rem;
+  --text-eyebrow: 1rem;
   --text-eyebrow--line-height: 1.5rem;
   /* Mobile adaptations (no mobile landing frame in Figma) */
   --text-display-m: 2.75rem;
@@ -107,7 +107,7 @@
   --text-intro-m: 1.25rem;
   --text-intro-m--line-height: 1.4;
   --text-intro-m--letter-spacing: -0.5px;
-  --text-cta: 2rem;
+  --text-cta: 1.75rem;
   --text-cta--line-height: 1.1;
 
   /* Radii */
@@ -131,7 +131,7 @@
   --animate-drift-b: drift-b 18s ease-in-out infinite;
   --animate-marquee: marquee 18s linear infinite;
   --animate-marquee-rev: marquee-rev 18s linear infinite;
-  --animate-logos: marquee 30s linear infinite;
+  --animate-logos: marquee 60s linear infinite; /* row = 4 sets, moves 2 sets per loop */
   --animate-column-down: column-down 18s linear infinite;
   --animate-column-up: column-up 18s linear infinite;
   --animate-border-0: border-0 18s linear infinite;

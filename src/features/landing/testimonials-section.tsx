@@ -70,10 +70,10 @@ export function TestimonialsSection() {
               <figure className="flex flex-col gap-8">
                 <blockquote className="flex flex-col gap-2">
                   <Image src="/landing/testimonial-icon.svg" alt="" width={28} height={28} />
-                  <p className="text-lead leading-normal text-white">{t.quote}</p>
+                  <p className="text-body-lg leading-normal text-white">{t.quote}</p>
                 </blockquote>
                 <figcaption className="flex flex-col gap-2">
-                  <span className="text-h5 leading-normal text-white">{t.name}</span>
+                  <span className="text-body-lg leading-normal text-white">{t.name}</span>
                   <span className="text-body leading-normal text-gray-3">{t.company}</span>
                 </figcaption>
               </figure>

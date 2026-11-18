@@ -28,8 +28,8 @@ export function ServiceRow(p: Props) {
     // Desktop: image is absolute on the right so collapsed titles keep the full row width.
     <div className="relative flex flex-col gap-4 py-4 lg:py-6">
       {/* When open, leave room for the image (gap 1.5rem) so text never runs under it. */}
-      <div className={cn("flex flex-col", p.open && "lg:pr-[calc(36%+1.5rem)] xl:pr-[31.5rem]")}>
-        <h3 className="font-display text-display-m font-semibold md:text-[3rem] md:leading-[1.2] xl:text-[3.5rem]">
+      <div className={cn("flex flex-col", p.open && "lg:pr-[calc(36%+1.5rem)] xl:pr-[27.5rem]")}>
+        <h3 className="font-display text-display-m font-semibold md:text-[2.25rem] md:leading-[1.2] xl:text-[2.5rem]">
           {/* Colour kept out of the size classes: cn() treats custom text-* tokens as colours. */}
           <button
             type="button"
@@ -46,8 +46,8 @@ export function ServiceRow(p: Props) {
         </h3>
         <div id={p.panelId} className={collapse(p.open)} inert={!p.open}>
           <div className="overflow-hidden">
-            <div className="flex flex-col gap-6 pt-4 lg:min-h-[17rem] lg:pt-6">
-              <p className="max-w-[36rem] pl-1 text-[1.125rem] leading-[1.5] text-white md:text-[1.375rem] md:leading-[1.5]">
+            <div className="flex flex-col gap-6 pt-4 lg:min-h-[14rem] lg:pt-6">
+              <p className="max-w-[36rem] pl-1 text-[1.125rem] leading-[1.5] text-white md:text-[1.125rem] md:leading-[1.5]">
                 {p.body}
               </p>
               <Link
@@ -55,14 +55,14 @@ export function ServiceRow(p: Props) {
                 aria-label={p.linkLabel}
                 className="mt-auto inline-flex size-11 items-center justify-center rounded-full text-white transition-transform hover:translate-x-1 motion-reduce:transition-none"
               >
-                <ArrowRight aria-hidden className="size-9" strokeWidth={1.5} />
+                <ArrowRight aria-hidden className="size-7" strokeWidth={1.5} />
               </Link>
             </div>
           </div>
         </div>
       </div>
       <div
-        className={cn(collapse(p.open), "lg:absolute lg:top-6 lg:right-0 lg:w-[36%] xl:w-[30rem]")}
+        className={cn(collapse(p.open), "lg:absolute lg:top-6 lg:right-0 lg:w-[36%] xl:w-[26rem]")}
         inert={!p.open}
       >
         <div className="overflow-hidden">

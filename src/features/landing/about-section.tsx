@@ -16,13 +16,13 @@ export function AboutSection() {
           </p>
           <h2
             id="about-title"
-            className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.66px] text-white md:text-[3rem] xl:text-[3.25rem]"
+            className="font-display text-[2.5rem] leading-[1.1] tracking-[-0.66px] text-white md:text-[2.25rem] xl:text-[2.5rem]"
           >
             {about.titleLines[0]}
             <br />
             {about.titleLines[1]}
           </h2>
-          <p className="text-[1.125rem] leading-[1.45] text-gray-2 md:text-h5 md:leading-[1.45]">
+          <p className="text-[1.125rem] leading-[1.45] text-gray-2 md:text-lead md:leading-[1.45]">
             {about.body}
           </p>
           <Link
